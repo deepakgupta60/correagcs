@@ -3,7 +3,9 @@ import {
   PageHero,
   ContentSection,
   BulletList,
+  PageCta,
 } from "../components/inner-page-sections";
+import { ContactInquiryForm } from "../components/forms";
 import { SiteFooter, SiteHeader } from "../components/homepage-sections";
 
 export const metadata: Metadata = {
@@ -38,6 +40,8 @@ export default function ContactPage() {
             and next-step plan. We handle both residential and commercial builds.
           </p>
         </ContentSection>
+        <ContactInquiryForm ctaLabel="Send My Project Request" />
+        <PageCta />
       </main>
       <SiteFooter />
     </div>

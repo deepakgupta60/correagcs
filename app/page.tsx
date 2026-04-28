@@ -4,11 +4,14 @@ import {
   FeaturedProjectsSection,
   HeroSection,
   JoinOurTeamSection,
+  ProcessSection,
   ProjectTypeFocusSection,
   ServicesSection,
   SiteFooter,
   SiteHeader,
   StatsSection,
+  ServiceAreasSection,
+  WhyChooseUsSection,
 } from "./components/homepage-sections";
 
 export default function Home() {
@@ -106,6 +109,9 @@ export default function Home() {
         <JoinOurTeamSection />
         <FeaturedProjectsSection projects={featuredProjects} />
         <ServicesSection services={services} />
+        <ProcessSection />
+        <WhyChooseUsSection />
+        <ServiceAreasSection />
         <CtaSection />
       </main>
       <SiteFooter />

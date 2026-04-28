@@ -113,7 +113,7 @@ export function SiteHeader() {
       <header
         className={`site-header fixed left-0 top-0 z-50 w-full border-b transition-colors duration-200 ${
           forceScrolled
-            ? "site-header--scrolled border-[#d6d6d6] bg-[#f5f5f5]"
+            ? "site-header--scrolled border-[#d6d6d6] bg-white/95"
             : "border-transparent bg-transparent"
         }`}
         data-force-scrolled={forceScrolled ? "true" : "false"}
@@ -183,7 +183,7 @@ export function SiteHeader() {
 
           <button
             type="button"
-            className="rounded p-1 text-3xl leading-none lg:hidden"
+            className="site-menu-button rounded p-1 text-3xl leading-none text-white lg:hidden"
             aria-label="Open menu"
             onClick={() => setMobileOpen(true)}
           >
@@ -284,6 +284,9 @@ export function HeroSection() {
       <div className="absolute inset-0 bg-[#161D22]/68" />
       <div className="relative z-10 w-full px-6 py-24 text-white md:px-10 lg:px-14">
         <div className="max-w-3xl space-y-6 reveal-up">
+          <p className="inline-block rounded-full border border-white/50 px-4 py-1 text-xs font-semibold tracking-[0.2em] text-white/90">
+            DALLAS-FORT WORTH METROPLEX
+          </p>
           <h1 className="text-4xl font-semibold leading-tight md:text-6xl">
             Building Trust.
             <br />
@@ -294,7 +297,7 @@ export function HeroSection() {
             with precision.
           </p>
           <div className="flex flex-wrap gap-4">
-            <PrimaryButton href="/contact">Get a Quote</PrimaryButton>
+            <PrimaryButton href="/contact-us">Get a Quote</PrimaryButton>
             <SecondaryButton href="/general-contractor-in-dallas">
               View Projects
             </SecondaryButton>
@@ -393,7 +396,7 @@ export function JoinOurTeamSection() {
             Work on high-impact projects with a team that values craftsmanship,
             innovation, and people-first leadership.
           </p>
-          <PrimaryButton href="/contact">Apply Now</PrimaryButton>
+          <PrimaryButton href="/join-our-team">Apply Now</PrimaryButton>
         </div>
         <div className="relative h-72 overflow-hidden rounded-2xl md:h-96">
           <Image
@@ -473,18 +476,133 @@ export function ServicesSection({ services }: { services: Service[] }) {
   );
 }
 
+export function ProcessSection() {
+  const steps = [
+    {
+      title: "Discovery & Budget Strategy",
+      text: "We align your vision with real-world timelines, permitting pathways, and cost forecasts.",
+    },
+    {
+      title: "Design & Pre-Construction",
+      text: "Our team coordinates consultants, scope packages, and procurement plans to avoid surprises.",
+    },
+    {
+      title: "Build & Quality Control",
+      text: "Daily site coordination, QA checks, and transparent progress reports keep your project on track.",
+    },
+    {
+      title: "Handover & Post-Support",
+      text: "We deliver clean closeout documents, warranty support, and long-term maintenance guidance.",
+    },
+  ];
+
+  return (
+    <SectionContainer className="bg-[#f8fafc]">
+      <div className="mb-8 reveal-up">
+        <p className="text-sm font-semibold tracking-[0.28em] text-[#C2A57A]">OUR PROCESS</p>
+        <h2 className="mt-3 text-3xl text-[#1F2A30] md:text-5xl">How We Deliver Stress-Free Construction</h2>
+      </div>
+      <div className="grid gap-5 md:grid-cols-2">
+        {steps.map((step, index) => (
+          <article key={step.title} className="reveal-up rounded-2xl border border-[#e5e7eb] bg-white p-6">
+            <p className="text-sm font-semibold tracking-[0.2em] text-[#C2A57A]">STEP {index + 1}</p>
+            <h3 className="mt-2 text-2xl text-[#1F2A30]">{step.title}</h3>
+            <p className="mt-3 leading-7 text-[#6B7280]">{step.text}</p>
+          </article>
+        ))}
+      </div>
+    </SectionContainer>
+  );
+}
+
+export function WhyChooseUsSection() {
+  const points = [
+    "Dedicated project manager and proactive communication from kickoff to handover",
+    "Licensed, insured, and safety-compliant execution across residential and commercial scopes",
+    "Detailed milestone schedules with procurement planning to reduce delays",
+    "Transparent budgeting with change-order control and no hidden surprises",
+  ];
+
+  return (
+    <SectionContainer>
+      <div className="grid gap-8 lg:grid-cols-2 lg:items-start">
+        <div className="reveal-up">
+          <p className="text-sm font-semibold tracking-[0.28em] text-[#C2A57A]">WHY CORREA</p>
+          <h2 className="mt-3 text-3xl leading-tight text-[#1F2A30] md:text-5xl">
+            Built for Owners Who Need Clarity, Speed, and Craftsmanship
+          </h2>
+          <p className="mt-4 max-w-xl leading-8 text-[#6B7280]">
+            We are a full-service general contractor and construction company serving Dallas-Fort Worth with a
+            people-first process, disciplined site management, and premium finish quality.
+          </p>
+          <div className="mt-6">
+            <PrimaryButton href="/contact-us">Schedule a Project Call</PrimaryButton>
+          </div>
+        </div>
+        <div className="grid gap-4">
+          {points.map((point) => (
+            <div key={point} className="reveal-up rounded-2xl border border-[#e5e7eb] bg-[#fafaf9] p-5">
+              <p className="text-[#1F2A30]">{point}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </SectionContainer>
+  );
+}
+
+export function ServiceAreasSection() {
+  const cities = [
+    { label: "General Contractor in Dallas", href: "/general-contractor-in-dallas" },
+    { label: "Construction Company in Denton", href: "/construction-company-in-denton" },
+    { label: "General Contractor in Frisco", href: "/general-contractor-in-frisco" },
+    { label: "General Contractor in Arlington", href: "/general-contractor-in-arlington" },
+  ];
+
+  return (
+    <SectionContainer className="bg-[#1F2A30] text-white">
+      <div className="reveal-up text-center">
+        <p className="text-sm font-semibold tracking-[0.28em] text-[#C2A57A]">SERVICE AREAS</p>
+        <h2 className="mt-4 text-3xl md:text-5xl">Local Expertise Across DFW</h2>
+        <p className="mx-auto mt-4 max-w-3xl text-white/80">
+          Explore city-specific construction services, local permitting support, and tailored project delivery for
+          your market.
+        </p>
+      </div>
+      <div className="mt-8 grid gap-4 md:grid-cols-2">
+        {cities.map((city) => (
+          <Link
+            key={city.href}
+            href={city.href}
+            className="reveal-up rounded-2xl border border-white/20 bg-white/5 px-5 py-4 text-lg transition hover:bg-white/10"
+          >
+            {city.label} →
+          </Link>
+        ))}
+      </div>
+    </SectionContainer>
+  );
+}
+
 export function CtaSection() {
   return (
     <SectionContainer className="reveal-up py-24 text-center">
       <div className="rounded-3xl bg-[#f7f3ed] px-6 py-14">
         <h2 className="mx-auto max-w-3xl text-3xl text-[#1F2A30] md:text-5xl">
-          Ready to start your next construction project?
+          Ready to Start Your Next Construction Project?
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-[#6B7280]">
-          Let our experts turn your ideas into a beautifully built reality.
+          Get a strategic roadmap, realistic budget, and trusted build partner for your residential or commercial
+          development.
         </p>
-        <div className="mt-8">
-          <PrimaryButton href="/contact">Get a Free Quote</PrimaryButton>
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+          <PrimaryButton href="/contact-us">Get a Free Quote</PrimaryButton>
+          <Link
+            href="/subcontractors"
+            className="inline-flex items-center justify-center rounded-full border border-[#1F2A30] px-6 py-3 text-sm font-semibold text-[#1F2A30] transition hover:bg-[#1F2A30] hover:text-white"
+          >
+            Partner as a Subcontractor
+          </Link>
         </div>
       </div>
     </SectionContainer>

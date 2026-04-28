@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { SiteFooter, SiteHeader } from "../components/homepage-sections";
-import { BulletList, ContentSection, PageHero } from "../components/inner-page-sections";
+import { BulletList, ContentSection, PageCta, PageHero } from "../components/inner-page-sections";
+import { CareerApplicationForm } from "../components/forms";
 
 export const metadata: Metadata = {
-  title: "Join Our Team",
+  title: "Construction Careers in Dallas | Correa Construction",
   description:
-    "Join the Correa Construction team in Dallas. Explore career opportunities in project execution, field operations, and planning.",
+    "Apply for construction careers at Correa Construction in Dallas-Fort Worth, including roles in project management, field operations, and estimating.",
 };
 
 export default function JoinOurTeamPage() {
@@ -28,6 +29,18 @@ export default function JoinOurTeamPage() {
             ]}
           />
         </ContentSection>
+        <ContentSection title="Why Build Your Career With Us">
+          <BulletList
+            items={[
+              "Consistent pipeline of residential and commercial projects",
+              "Mentorship and leadership growth opportunities",
+              "Safety-first culture with modern project workflows",
+              "Team-driven environment that values ownership",
+            ]}
+          />
+        </ContentSection>
+        <CareerApplicationForm ctaLabel="Apply Now" />
+        <PageCta />
       </main>
       <SiteFooter />
     </div>

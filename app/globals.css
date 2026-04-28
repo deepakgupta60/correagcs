@@ -37,7 +37,7 @@ html {
 }
 
 .site-nav-item {
-  color: #f5f5f5;
+  color: #ffffff;
   border-radius: 6px;
   transition: background-color 0.2s ease, color 0.2s ease;
 }
@@ -48,8 +48,19 @@ html {
 }
 
 .site-brand {
-  color: #f5f5f5;
+  color: #ffffff;
   transition: color 0.2s ease;
+}
+
+.site-header--hovered .site-nav-item,
+.site-header--hovered .site-brand,
+.site-header--hovered .site-menu-button {
+  color: #0f2f66;
+}
+
+.site-header--hovered .site-nav-item:hover {
+  background: #ececec;
+  color: #0f2f66;
 }
 
 .site-header--scrolled .site-nav-item {
@@ -57,6 +68,10 @@ html {
 }
 
 .site-header--scrolled .site-brand {
+  color: #0f2f66;
+}
+
+.site-header--scrolled .site-menu-button {
   color: #0f2f66;
 }
 

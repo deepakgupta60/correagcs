@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { SiteFooter, SiteHeader } from "../components/homepage-sections";
-import { BulletList, ContentSection, PageHero } from "../components/inner-page-sections";
+import { BulletList, ContentSection, PageCta, PageHero } from "../components/inner-page-sections";
+import { SubcontractorRegistrationForm } from "../components/forms";
 
 export const metadata: Metadata = {
-  title: "Subcontractors",
+  title: "Subcontractor Registration | Correa Construction",
   description:
-    "Subcontractor partnership opportunities with Correa Construction in Dallas. Learn requirements and collaboration process.",
+    "Register as a subcontractor with Correa Construction for upcoming residential and commercial projects in the Dallas-Fort Worth region.",
 };
 
 export default function SubcontractorsPage() {
@@ -28,6 +29,18 @@ export default function SubcontractorsPage() {
             ]}
           />
         </ContentSection>
+        <ContentSection title="Trade Packages We Frequently Bid">
+          <BulletList
+            items={[
+              "Concrete, structural framing, and masonry",
+              "MEP: electrical, plumbing, and HVAC",
+              "Drywall, painting, and finish trades",
+              "Sitework, grading, and exterior packages",
+            ]}
+          />
+        </ContentSection>
+        <SubcontractorRegistrationForm ctaLabel="Submit Subcontractor Profile" />
+        <PageCta />
       </main>
       <SiteFooter />
     </div>
