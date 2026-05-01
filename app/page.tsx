@@ -18,7 +18,7 @@ import {
 } from "./components/homepage-sections";
 
 export const metadata: Metadata = {
-  title: "General Contractor in Dallas | Correa Construction",
+  title: "General Contractor in Dallas | Correa General Contractors",
   description:
     "Correa Construction provides residential and commercial construction, design-build, renovation, and consultation services across Dallas-Fort Worth.",
 };

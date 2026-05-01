@@ -17,14 +17,14 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://correaconstruction.com"),
+  metadataBase: new URL("https://correagcs.com"),
   title: {
     default: "Correa Construction",
-    template: "%s | Correa Construction",
+    template: "%s | Correa General Contractors",
   },
   description:
     "Correa General Contractors delivers residential and commercial construction services in Dallas-Fort Worth with transparent planning and quality execution.",
-  applicationName: "Correa Construction",
+  applicationName: "Correa General Contractors",
   keywords: [
     "Dallas construction company",
     "general contractor Dallas",

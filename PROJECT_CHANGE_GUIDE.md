@@ -68,7 +68,7 @@ If `next` command is missing, run `npm install` again in project root.
 
 - Update title/description keywords in each page metadata object
 - Add/remove routes in `app/sitemap.ts`
-- Keep canonical domain consistent (`https://correaconstruction.com`)
+- Keep canonical domain consistent (`https://correagcs.com`)
 
 ## 6) Home Page Section Mapping
 
