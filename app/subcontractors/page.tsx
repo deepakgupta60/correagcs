@@ -39,6 +39,16 @@ export default function SubcontractorsPage() {
             ]}
           />
         </ContentSection>
+        <ContentSection title="Subcontractor Contact Desk">
+          <BulletList
+            items={[
+              "Phone: +1 (555) 202-8811",
+              "Email: trades@correabuild.com",
+              "Address: 245 Harbor Street, Suite 18, Dallas, TX 75201",
+              "Hours: Monday - Friday, 9:00 AM - 6:00 PM",
+            ]}
+          />
+        </ContentSection>
         <SubcontractorRegistrationForm ctaLabel="Submit Subcontractor Profile" />
         <PageCta />
       </main>

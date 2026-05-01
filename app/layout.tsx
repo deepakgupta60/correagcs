@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Montserrat } from "next/font/google";
+import { CookieBanner } from "./components/cookie-banner";
 import { FloatingActions } from "./components/floating-actions";
 import { GsapAnimations } from "./components/gsap-animations";
 import "./globals.css";
@@ -16,12 +17,39 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://correaconstruction.com"),
   title: {
     default: "Correa Construction",
     template: "%s | Correa Construction",
   },
   description:
-    "Correa Construction delivers modern residential and commercial construction services in Dallas.",
+    "Correa Construction delivers residential and commercial construction services in Dallas-Fort Worth with transparent planning and quality execution.",
+  applicationName: "Correa Construction",
+  keywords: [
+    "Dallas construction company",
+    "general contractor Dallas",
+    "residential construction Dallas",
+    "commercial construction Dallas",
+    "design build contractor",
+  ],
+  openGraph: {
+    title: "Correa Construction",
+    description:
+      "Trusted Dallas-Fort Worth construction partner for residential and commercial projects.",
+    type: "website",
+    locale: "en_US",
+    siteName: "Correa Construction",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Correa Construction",
+    description:
+      "Residential and commercial construction services across Dallas-Fort Worth.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
@@ -37,6 +65,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">
         <GsapAnimations />
         {children}
+        <CookieBanner />
         <FloatingActions />
       </body>
     </html>

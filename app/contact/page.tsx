@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import {
   PageHero,
   ContentSection,
@@ -20,10 +21,26 @@ export default function ContactPage() {
       <SiteHeader />
       <main>
         <PageHero
-          eyebrow="CONTACT US"
-          title="Let’s Plan Your Next Construction Project"
-          description="Speak with our team about your project scope, location, timeline, and budget."
+          eyebrow="CONTACT"
+          title="Start the Conversation"
+          description="This page is for quick contact and inquiry submission. For full address details, map, and socials, visit our Get in Touch page."
         />
+        <section className="py-16">
+          <div className="w-full px-6 md:px-10 lg:px-14">
+            <div className="grid gap-4 md:grid-cols-2">
+              <Link href="/contact-us" className="reveal-up rounded-2xl border border-[#dbe3ee] bg-white p-6 text-[#1F2A30] shadow-[0_10px_24px_rgba(10,30,40,0.07)] transition hover:-translate-y-0.5">
+                <p className="text-xs font-semibold tracking-[0.24em] text-[#C2A57A]">FULL CONTACT PAGE</p>
+                <h2 className="mt-2 text-2xl font-semibold">Get in Touch</h2>
+                <p className="mt-2 text-sm text-[#64748B]">View address, phone, social links, and embedded Google map.</p>
+              </Link>
+              <Link href="/build-with-us" className="reveal-up rounded-2xl border border-[#dbe3ee] bg-white p-6 text-[#1F2A30] shadow-[0_10px_24px_rgba(10,30,40,0.07)] transition hover:-translate-y-0.5">
+                <p className="text-xs font-semibold tracking-[0.24em] text-[#C2A57A]">PARTNERSHIP</p>
+                <h2 className="mt-2 text-2xl font-semibold">Build With Us</h2>
+                <p className="mt-2 text-sm text-[#64748B]">Submit collaboration requests for projects, vendors, and partnerships.</p>
+              </Link>
+            </div>
+          </div>
+        </section>
         <ContentSection title="Reach Our Team">
           <BulletList
             items={[
@@ -44,7 +61,7 @@ export default function ContactPage() {
           <BulletList
             items={[
               "Get Estimate: Complete scope + budget + timeline discussion",
-              "Quick Estimate: Fast budget range for early decision-making",
+              "Early Estimate: Fast budget range for early decision-making",
               "Bid Support: Documentation and scope alignment for owners",
               "Pre-Construction Review: Risks, sequencing, and permit guidance",
             ]}

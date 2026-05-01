@@ -1,5 +1,8 @@
+import type { Metadata } from "next";
+import { blogPosts } from "./components/blog-data";
 import {
   AboutSection,
+  BlogSection,
   CtaSection,
   FeaturedProjectsSection,
   HeroSection,
@@ -13,6 +16,12 @@ import {
   ServiceAreasSection,
   WhyChooseUsSection,
 } from "./components/homepage-sections";
+
+export const metadata: Metadata = {
+  title: "General Contractor in Dallas | Correa Construction",
+  description:
+    "Correa Construction provides residential and commercial construction, design-build, renovation, and consultation services across Dallas-Fort Worth.",
+};
 
 export default function Home() {
   const stats = [
@@ -41,7 +50,7 @@ export default function Home() {
     {
       title: "Interior Renovation",
       image:
-        "https://images.unsplash.com/photo-1600585154154-712e39fd45d8?auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1600607687644-c7171b42498f?auto=format&fit=crop&w=1000&q=80",
     },
   ];
 
@@ -50,16 +59,19 @@ export default function Home() {
       title: "Oceanfront Luxury Villa",
       image:
         "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=80",
+      href: "/projects/oceanfront-luxury-villa",
     },
     {
       title: "Westside Corporate Hub",
       image:
         "https://images.unsplash.com/photo-1483366774565-c783b9f70e2c?auto=format&fit=crop&w=1000&q=80",
+      href: "/projects/westside-corporate-hub",
     },
     {
       title: "Summit Logistics Complex",
       image:
         "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1000&q=80",
+      href: "/projects/summit-logistics-complex",
     },
   ];
 
@@ -69,7 +81,7 @@ export default function Home() {
       description:
         "End-to-end management of planning, procurement, and build execution with transparent updates.",
       image:
-        "https://images.unsplash.com/photo-1590725176485-88aa57f5f7f8?auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1000&q=80",
       href: "/services/general-contracting",
     },
     {
@@ -85,7 +97,7 @@ export default function Home() {
       description:
         "High-quality renovation services that modernize existing structures while preserving functionality.",
       image:
-        "https://images.unsplash.com/photo-1604014056465-0ad23f16dfd8?auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1000&q=80",
       href: "/services/renovation-remodeling",
     },
     {
@@ -106,6 +118,13 @@ export default function Home() {
     },
   ];
 
+  const homeBlogPosts = blogPosts.slice(0, 3).map((post) => ({
+    title: post.title,
+    excerpt: post.excerpt,
+    image: post.image,
+    href: `/blog/${post.slug}`,
+  }));
+
   return (
     <div className="bg-white">
       <SiteHeader />
@@ -120,6 +139,7 @@ export default function Home() {
         <ProcessSection />
         <WhyChooseUsSection />
         <ServiceAreasSection />
+        <BlogSection posts={homeBlogPosts} />
         <CtaSection />
       </main>
       <SiteFooter />

@@ -1,0 +1,8 @@
+<svg width="320" height="72" viewBox="0 0 320 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="320" height="72" rx="12" fill="#1F2A30"/>
+  <rect x="10" y="10" width="52" height="52" rx="10" fill="#0F151A"/>
+  <path d="M24 44L36 26L48 44" stroke="#C2A57A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M28 44H44" stroke="#C2A57A" stroke-width="4" stroke-linecap="round"/>
+  <text x="74" y="34" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700">CORREA</text>
+  <text x="74" y="53" fill="#CFD8E3" font-family="Arial, Helvetica, sans-serif" font-size="13" letter-spacing="1.4">CONSTRUCTION</text>
+</svg>

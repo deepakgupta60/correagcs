@@ -55,19 +55,21 @@ export function PageCta() {
   return (
     <section className="pb-20">
       <div className="w-full px-6 md:px-10 lg:px-14">
-        <div className="rounded-3xl bg-gradient-to-br from-[#f7f3ed] to-[#eaf1f9] px-8 py-12 text-center">
+        <div className="reveal-up rounded-3xl bg-gradient-to-br from-[#f7f3ed] to-[#eaf1f9] px-8 py-12 text-center">
           <h3 className="text-3xl text-[#1F2A30] md:text-4xl">
-            Ready to discuss your project in Dallas?
+            Ready to discuss your project?
           </h3>
           <p className="mx-auto mt-3 max-w-2xl text-[#6B7280]">
-            Get a detailed estimate and timeline from our team.
+            Get in touch with our team for scope review, budget clarity, and next steps.
           </p>
-          <Link
-            href="/contact"
-            className="mt-6 inline-flex items-center justify-center rounded-full bg-[#C2A57A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#ad9169]"
-          >
-            Get in Touch
-          </Link>
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+            <Link
+              href="/contact-us"
+              className="inline-flex items-center justify-center rounded-full bg-[#C2A57A] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#ad9169]"
+            >
+              Get in Touch
+            </Link>
+          </div>
         </div>
       </div>
     </section>
