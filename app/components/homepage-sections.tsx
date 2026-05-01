@@ -12,11 +12,11 @@ type BlogPost = { title: string; excerpt: string; image: string; href: string };
 
 const sectionContainerClass = "w-full px-6 py-20 md:px-10 lg:px-14";
 const navLinks = [
-  { label: "Home", href: "/" },
+  // { label: "Home", href: "/" },
   { label: "Projects", href: "/projects" },
   { label: "About", href: "/about-us" },
   { label: "Blog", href: "/blog" },
-  { label: "Build With Us", href: "/build-with-us" },
+  { label: "Contact", href: "/build-with-us" },
 ];
 const servicesQuickLinks = [
   { label: "General Contracting", href: "/services/general-contracting" },
@@ -192,7 +192,7 @@ export function HeroSection() {
             Delivering Excellence.
           </h1>
           <p className="max-w-2xl text-lg leading-8 text-white/85">
-            Correa Contractors delivers premium builds with clear communication,
+            Correa General Contractors delivers premium builds with clear communication,
             strong planning, and flawless site execution from start to finish.
           </p>
           <div className="flex flex-wrap gap-4">
@@ -520,7 +520,7 @@ export function SiteFooter() {
         <div>
           <Image src="/white.png" alt="Correa Construction" width={170} height={36} className="object-contain" />
           <p className="mt-4 text-sm leading-7 text-white/80">
-            Premium construction partner for residential and commercial projects
+            Correa General Contractors for residential and commercial projects
             across Dallas-Fort Worth.
           </p>
           <div className="mt-4 flex gap-3 text-sm">
@@ -536,7 +536,7 @@ export function SiteFooter() {
             <li><Link href="/services" className="hover:text-[#C2A57A]">Services</Link></li>
             <li><Link href="/about-us" className="hover:text-[#C2A57A]">About</Link></li>
             <li><Link href="/contact-us" className="hover:text-[#C2A57A]">Get in Touch</Link></li>
-            <li><Link href="/build-with-us" className="hover:text-[#C2A57A]">Build With Us</Link></li>
+            <li><Link href="/build-with-us" className="hover:text-[#C2A57A]">Contacts</Link></li>
             <li><Link href="/blog" className="hover:text-[#C2A57A]">Blog</Link></li>
             <li><Link href="/subcontractors" className="hover:text-[#C2A57A]">Subcontractors</Link></li>
           </ul>
@@ -544,9 +544,9 @@ export function SiteFooter() {
         <div>
           <h3 className="text-2xl font-semibold">Contact</h3>
           <ul className="mt-4 space-y-2 text-sm text-white/80">
-            <li>+1 (555) 202-8811</li>
-            <li>hello@correabuild.com</li>
-            <li>Dallas-Fort Worth Metroplex</li>
+            <li>+1 (469) 854-3445</li>
+            <li>hello@correagcs.com</li>
+            <li>16210 Seagoville Rd, Dallas, TX 75253, USA</li>
           </ul>
         </div>
         <div>
@@ -560,7 +560,7 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="border-t border-white/10 px-6 py-4 text-center text-xs text-white/60 md:px-10 lg:px-14">
-        © {new Date().getFullYear()} Correa Construction. All rights reserved.
+        © {new Date().getFullYear()} Correa General Contractors. All rights reserved.
       </div>
     </footer>
   );

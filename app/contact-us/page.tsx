@@ -13,18 +13,18 @@ export const metadata: Metadata = {
 const contactCards = [
   {
     title: "Phone",
-    value: "+1 (555) 202-8811",
-    href: "tel:+15552028811",
+    value: "+1 (469) 854-3445",
+    href: "tel:+14698543445 ",
   },
   {
     title: "Email",
-    value: "hello@correabuild.com",
-    href: "mailto:hello@correabuild.com",
+    value: "hello@correagcs.com",
+    href: "mailto:hello@correagcs.com",
   },
   {
     title: "Office",
-    value: "245 Harbor Street, Suite 18, Dallas, TX 75201",
-    href: "https://maps.google.com/?q=245+Harbor+Street+Suite+18+Dallas+TX+75201",
+    value: "16210 Seagoville Rd, Dallas, TX 75253, USA",
+    href: "https://maps.app.goo.gl/DhvXe4BDYzktbs6Y7",
   },
 ];
 
@@ -64,7 +64,7 @@ export default function ContactUsPage() {
                 <div className="mt-3 overflow-hidden rounded-xl border border-[#dbe3ee]">
                   <iframe
                     title="Correa Construction Office Location"
-                    src="https://maps.google.com/maps?q=245%20Harbor%20Street%20Suite%2018%20Dallas%20TX%2075201&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d429351.5219142948!2d-97.0808479701444!3d32.7840713956224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864ea130ffff463f%3A0x65e28f354dae77de!2sCorrea%20Masonry%20%26%20Stucco%20LLC!5e0!3m2!1sen!2sin!4v1777629503953!5m2!1sen!2sin"
                     className="h-72 w-full"
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
@@ -72,6 +72,9 @@ export default function ContactUsPage() {
                 </div>
               </article>
             </div>
+
+
+            
             <div className="reveal-up mt-8 rounded-2xl border border-[#dbe3ee] bg-[#f8fafc] p-6 text-[#475569]">
               <p className="text-sm leading-7">
                 Business Hours: Monday - Friday, 9:00 AM - 6:00 PM. For urgent site requirements, call us directly and our project desk will coordinate immediate support.

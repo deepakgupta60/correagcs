@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     template: "%s | Correa Construction",
   },
   description:
-    "Correa Construction delivers residential and commercial construction services in Dallas-Fort Worth with transparent planning and quality execution.",
+    "Correa General Contractors delivers residential and commercial construction services in Dallas-Fort Worth with transparent planning and quality execution.",
   applicationName: "Correa Construction",
   keywords: [
     "Dallas construction company",
