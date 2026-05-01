@@ -1,14 +1,18 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const COOKIE_KEY = "correa_cookie_consent";
 
 export function CookieBanner() {
-  const [visible, setVisible] = useState(() => {
-    if (typeof window === "undefined") return false;
-    return !window.localStorage.getItem(COOKIE_KEY);
-  });
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const hasConsent = window.localStorage.getItem(COOKIE_KEY);
+    if (!hasConsent) {
+      setVisible(true);
+    }
+  }, []);
 
   const acceptCookies = () => {
     window.localStorage.setItem(COOKIE_KEY, "accepted");
