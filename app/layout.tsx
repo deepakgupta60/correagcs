@@ -19,7 +19,7 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   metadataBase: new URL("https://correagcs.com"),
   title: {
-    default: "Correa Construction",
+    default: "Correa General Contractors",
     template: "%s | Correa General Contractors",
   },
   description:
@@ -33,16 +33,16 @@ export const metadata: Metadata = {
     "design build contractor",
   ],
   openGraph: {
-    title: "Correa Construction",
+    title: "Correa General Contractors",
     description:
       "Trusted Dallas-Fort Worth construction partner for residential and commercial projects.",
     type: "website",
     locale: "en_US",
-    siteName: "Correa Construction",
+    siteName: "Correa General Contractors",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Correa Construction",
+    title: "Correa General Contractors",
     description:
       "Residential and commercial construction services across Dallas-Fort Worth.",
   },

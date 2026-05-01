@@ -5,9 +5,9 @@ import { SiteFooter, SiteHeader } from "../components/homepage-sections";
 import { PageCta, PageHero } from "../components/inner-page-sections";
 
 export const metadata: Metadata = {
-  title: "Construction Projects | Correa Construction",
+  title: "Construction Projects | Correa General Contractors",
   description:
-    "Explore Correa Construction projects across residential, commercial, and industrial categories with project details and delivery highlights.",
+    "Explore Correa General Contractors projects across residential, commercial, and industrial categories with project details and delivery highlights.",
 };
 
 export default function ProjectsPage() {

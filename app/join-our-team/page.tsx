@@ -4,9 +4,9 @@ import { BulletList, ContentSection, PageCta, PageHero } from "../components/inn
 import { CareerApplicationForm } from "../components/forms";
 
 export const metadata: Metadata = {
-  title: "Construction Careers in Dallas | Correa Construction",
+  title: "Construction Careers in Dallas | Correa General Contractors",
   description:
-    "Apply for construction careers at Correa Construction in Dallas-Fort Worth, including roles in project management, field operations, and estimating.",
+    "Apply for construction careers at Correa General Contractors in Dallas-Fort Worth, including roles in project management, field operations, and estimating.",
 };
 
 export default function JoinOurTeamPage() {

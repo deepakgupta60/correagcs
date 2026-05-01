@@ -8,9 +8,9 @@ import {
 import { SiteFooter, SiteHeader } from "../components/homepage-sections";
 
 export const metadata: Metadata = {
-  title: "General Contractor in Dallas | Correa Construction",
+  title: "General Contractor in Dallas | Correa General Contractors",
   description:
-    "Correa Construction is a trusted general contractor in Dallas for residential and commercial construction projects.",
+    "Correa General Contractors is a trusted general contractor in Dallas for residential and commercial construction projects.",
 };
 
 export default function GeneralContractorDallasPage() {
@@ -21,7 +21,7 @@ export default function GeneralContractorDallasPage() {
         <PageHero
           eyebrow="DALLAS CONSTRUCTION"
           title="Trusted General Contractor in Dallas"
-          description="From planning and permitting to execution and final delivery, Correa Construction provides complete general contracting services across Dallas."
+          description="From planning and permitting to execution and final delivery, Correa General Contractors provides complete general contracting services across Dallas."
         />
         <ContentSection title="Why Dallas Clients Choose Us">
           <p>

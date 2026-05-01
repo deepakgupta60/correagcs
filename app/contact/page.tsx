@@ -10,9 +10,9 @@ import { ContactInquiryForm } from "../components/forms";
 import { SiteFooter, SiteHeader } from "../components/homepage-sections";
 
 export const metadata: Metadata = {
-  title: "Contact Correa Construction | Dallas",
+  title: "Contact Correa General Contractors | Dallas",
   description:
-    "Contact Correa Construction for residential and commercial projects in Dallas. Request a quote and consultation today.",
+    "Contact Correa General Contractors for residential and commercial projects in Dallas. Request a quote and consultation today.",
 };
 
 export default function ContactPage() {
@@ -44,7 +44,7 @@ export default function ContactPage() {
         <ContentSection title="Reach Our Team">
           <BulletList
             items={[
-              "Phone: +1 (555) 202-8811",
+              "Phone: +1 (469) 854-3445",
               "Email: hello@correabuild.com",
               "Office: 245 Harbor Street, Suite 18, Dallas, TX",
               "Hours: Monday - Friday, 9:00 AM to 6:00 PM",

@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: BlogDetailProps): Promise<Met
 
   if (!post) {
     return {
-      title: "Blog Not Found | Correa Construction",
+      title: "Blog Not Found | Correa General Contractors",
       description: "The requested blog article could not be found.",
     };
   }

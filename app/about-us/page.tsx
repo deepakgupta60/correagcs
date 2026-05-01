@@ -8,9 +8,9 @@ import {
 import { SiteFooter, SiteHeader } from "../components/homepage-sections";
 
 export const metadata: Metadata = {
-  title: "About Us | Correa Construction",
+  title: "About Us | Correa General Contractors",
   description:
-    "Learn about Correa Construction, our mission, team values, and commitment to high-quality construction in Dallas.",
+    "Learn about Correa General Contractors, our mission, team values, and commitment to high-quality construction in Dallas.",
 };
 
 export default function AboutUsPage() {
@@ -21,7 +21,7 @@ export default function AboutUsPage() {
         <PageHero
           eyebrow="ABOUT CORREA"
           title="Building with Integrity, Precision, and Care"
-          description="Correa Construction is committed to creating durable spaces that reflect craftsmanship, functionality, and modern design."
+          description="Correa General Contractors is committed to creating durable spaces that reflect craftsmanship, functionality, and modern design."
         />
         <ContentSection title="Our Story">
           <p>

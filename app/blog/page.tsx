@@ -6,9 +6,9 @@ import { SiteFooter, SiteHeader } from "../components/homepage-sections";
 import { PageCta, PageHero } from "../components/inner-page-sections";
 
 export const metadata: Metadata = {
-  title: "Construction Blog | Correa Construction",
+  title: "Construction Blog | Correa General Contractors",
   description:
-    "Read practical construction insights, planning tips, budgeting guidance, and project best practices from Correa Construction.",
+    "Read practical construction insights, planning tips, budgeting guidance, and project best practices from Correa General Contractors.",
 };
 
 export default function BlogPage() {
@@ -18,7 +18,7 @@ export default function BlogPage() {
       <main>
         <PageHero
           eyebrow="INSIGHTS"
-          title="Correa Construction Blog"
+          title="Correa General Contractors Blog"
           description="Actionable guides and construction insights for owners, partners, and teams planning projects in Dallas-Fort Worth."
         />
         <section className="py-16 md:py-20">

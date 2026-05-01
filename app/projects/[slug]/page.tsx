@@ -22,19 +22,19 @@ export async function generateMetadata({ params }: ProjectDetailProps): Promise<
 
   if (!project) {
     return {
-      title: "Project Not Found | Correa Construction",
+      title: "Project Not Found | Correa General Contractors",
       description: "The requested project detail page could not be found.",
     };
   }
 
   return {
-    title: `${project.title} Project | Correa Construction`,
+    title: `${project.title} Project | Correa General Contractors`,
     description: `${project.summary} Location: ${project.location}. Owner: ${project.owner}.`,
     alternates: {
       canonical: `/projects/${project.slug}`,
     },
     openGraph: {
-      title: `${project.title} Project | Correa Construction`,
+      title: `${project.title} Project | Correa General Contractors`,
       description: project.summary,
       images: [project.heroImage],
       type: "article",

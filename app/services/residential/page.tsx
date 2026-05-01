@@ -8,9 +8,9 @@ import {
 import { SiteFooter, SiteHeader } from "../../components/homepage-sections";
 
 export const metadata: Metadata = {
-  title: "Residential Construction Services | Correa Construction",
+  title: "Residential Construction Services | Correa General Contractors",
   description:
-    "Residential construction and renovation by Correa Construction for custom homes and modern living spaces across Dallas-Fort Worth.",
+    "Residential construction and renovation by Correa General Contractors for custom homes and modern living spaces across Dallas-Fort Worth.",
 };
 
 export default function ResidentialServicesPage() {

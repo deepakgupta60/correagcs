@@ -5,7 +5,7 @@ import { ContentSection, PageCta, PageHero } from "../components/inner-page-sect
 export const metadata: Metadata = {
   title: "Who We Are",
   description:
-    "Learn who we are at Correa Construction, our leadership values, and our client-first construction philosophy in Dallas.",
+    "Learn who we are at Correa General Contractors, our leadership values, and our client-first construction philosophy in Dallas.",
 };
 
 export default function WhoWeArePage() {
@@ -16,7 +16,7 @@ export default function WhoWeArePage() {
         <PageHero
           eyebrow="WHO WE ARE"
           title="A Construction Partner Built on Trust"
-          description="Correa Construction delivers dependable project outcomes through transparent communication and precision execution."
+          description="Correa General Contractors delivers dependable project outcomes through transparent communication and precision execution."
         />
         <ContentSection title="Our Leadership & Culture">
           <p>

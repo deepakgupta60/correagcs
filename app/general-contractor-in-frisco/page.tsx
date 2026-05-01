@@ -3,9 +3,9 @@ import { SiteFooter, SiteHeader } from "../components/homepage-sections";
 import { BulletList, ContentSection, PageCta, PageHero } from "../components/inner-page-sections";
 
 export const metadata: Metadata = {
-  title: "General Contractor in Frisco | Correa Construction",
+  title: "General Contractor in Frisco | Correa General Contractors",
   description:
-    "Correa Construction is a dependable general contractor in Frisco for commercial interiors, residential builds, renovations, and full project management.",
+    "Correa General Contractors is a dependable general contractor in Frisco for commercial interiors, residential builds, renovations, and full project management.",
 };
 
 export default function GeneralContractorFriscoPage() {
@@ -16,7 +16,7 @@ export default function GeneralContractorFriscoPage() {
         <PageHero
           eyebrow="FRISCO GENERAL CONTRACTOR"
           title="Experienced General Contractor in Frisco, TX"
-          description="From pre-construction strategy to final delivery, Correa Construction supports Frisco projects with structured planning, expert coordination, and premium craftsmanship."
+          description="From pre-construction strategy to final delivery, Correa General Contractors supports Frisco projects with structured planning, expert coordination, and premium craftsmanship."
         />
         <ContentSection title="General Contracting Expertise in Frisco">
           <BulletList

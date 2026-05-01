@@ -5,9 +5,9 @@ import { SiteFooter, SiteHeader } from "../components/homepage-sections";
 import { PageCta, PageHero } from "../components/inner-page-sections";
 
 export const metadata: Metadata = {
-  title: "Get in Touch | Correa Construction",
+  title: "Get in Touch | Correa General Contractors",
   description:
-    "Contact Correa Construction for residential and commercial projects. Reach us by phone, email, or office visit and request a consultation.",
+    "Contact Correa General Contractors for residential and commercial projects. Reach us by phone, email, or office visit and request a consultation.",
 };
 
 const contactCards = [
@@ -63,7 +63,7 @@ export default function ContactUsPage() {
                 <p className="text-xs font-semibold tracking-[0.22em] text-[#C2A57A]">Google Map</p>
                 <div className="mt-3 overflow-hidden rounded-xl border border-[#dbe3ee]">
                   <iframe
-                    title="Correa Construction Office Location"
+                    title="Correa General Contractors Office Location"
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d429351.5219142948!2d-97.0808479701444!3d32.7840713956224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864ea130ffff463f%3A0x65e28f354dae77de!2sCorrea%20Masonry%20%26%20Stucco%20LLC!5e0!3m2!1sen!2sin!4v1777629503953!5m2!1sen!2sin"
                     className="h-72 w-full"
                     loading="lazy"

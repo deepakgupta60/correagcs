@@ -7,7 +7,7 @@ import { serviceDetails } from "../components/service-data";
 export const metadata: Metadata = {
   title: "What We Do",
   description:
-    "Explore what Correa Construction does: general contracting, design build, renovation, and project consultation in Dallas.",
+    "Explore what Correa General Contractors does: general contracting, design build, renovation, and project consultation in Dallas.",
 };
 
 export default function WhatWeDoPage() {

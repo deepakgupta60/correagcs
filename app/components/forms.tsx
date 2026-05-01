@@ -62,7 +62,7 @@ export function SubcontractorRegistrationForm({ ctaLabel }: FormProps) {
       <div className="w-full px-6 md:px-10 lg:px-14">
         <SectionTitle
           title="Subcontractor Registration Form"
-          description="Register your trade specialization and company credentials to be considered for upcoming Correa Construction projects."
+          description="Register your trade specialization and company credentials to be considered for upcoming Correa General Contractors projects."
         />
         <form className="reveal-up mt-8 grid gap-4 rounded-3xl border border-[#e5e7eb] bg-[#fafafa] p-6 md:grid-cols-2">
           <input className={inputClassName} name="companyName" placeholder="Company Name" required />

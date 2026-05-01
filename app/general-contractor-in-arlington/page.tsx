@@ -3,9 +3,9 @@ import { SiteFooter, SiteHeader } from "../components/homepage-sections";
 import { BulletList, ContentSection, PageCta, PageHero } from "../components/inner-page-sections";
 
 export const metadata: Metadata = {
-  title: "General Contractor in Arlington | Correa Construction",
+  title: "General Contractor in Arlington | Correa General Contractors",
   description:
-    "Need a general contractor in Arlington? Correa Construction provides full-service construction management for residential and commercial projects with predictable execution.",
+    "Need a general contractor in Arlington? Correa General Contractors provides full-service construction management for residential and commercial projects with predictable execution.",
 };
 
 export default function GeneralContractorArlingtonPage() {
@@ -16,7 +16,7 @@ export default function GeneralContractorArlingtonPage() {
         <PageHero
           eyebrow="ARLINGTON CONSTRUCTION"
           title="Top-Rated General Contractor in Arlington, TX"
-          description="Correa Construction partners with businesses, developers, and homeowners in Arlington for efficient project planning, build execution, and successful project handover."
+          description="Correa General Contractors partners with businesses, developers, and homeowners in Arlington for efficient project planning, build execution, and successful project handover."
         />
         <ContentSection title="Our Arlington Construction Capabilities">
           <BulletList

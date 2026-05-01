@@ -4,9 +4,9 @@ import { SiteFooter, SiteHeader } from "../components/homepage-sections";
 import { BulletList, ContentSection, PageCta, PageHero } from "../components/inner-page-sections";
 
 export const metadata: Metadata = {
-  title: "Build With Us | Correa Construction",
+  title: "Build With Us | Correa General Contractors",
   description:
-    "Partner with Correa Construction as a client, vendor, investor, or strategic collaborator. Submit your details through our Build With Us form.",
+    "Partner with Correa General Contractors as a client, vendor, investor, or strategic collaborator. Submit your details through our Build With Us form.",
 };
 
 export default function BuildWithUsPage() {

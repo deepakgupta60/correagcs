@@ -5,9 +5,9 @@ import { SiteFooter, SiteHeader } from "../components/homepage-sections";
 import { serviceDetails } from "../components/service-data";
 
 export const metadata: Metadata = {
-  title: "Construction Services in Dallas | Correa Construction",
+  title: "Construction Services in Dallas | Correa General Contractors",
   description:
-    "Explore Correa Construction services in Dallas including general contracting, design-build, renovation, and project consultation.",
+    "Explore Correa General Contractors services in Dallas including general contracting, design-build, renovation, and project consultation.",
 };
 
 export default function ServicesPage() {

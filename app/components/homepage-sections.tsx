@@ -92,7 +92,7 @@ export function SiteHeader() {
           }`}
         >
           <Link href="/" className="flex items-center gap-2">
-            <Image src="/black.png" alt="Correa Construction" width={205} height={46} priority className="h-auto w-[148px] sm:w-[205px] object-contain" />
+            <Image src="/black.png" alt="Correa General Contractors" width={205} height={46} priority className="h-auto w-[148px] sm:w-[205px] object-contain" />
           </Link>
 
           <nav className="hidden items-center gap-1 lg:flex">
@@ -136,7 +136,7 @@ export function SiteHeader() {
         <div className="fixed inset-0 z-[120] bg-[#11181d]/95 p-4 text-white lg:hidden" onClick={() => setMobileOpen(false)}>
           <div className="mx-auto flex h-full max-w-xl flex-col rounded-2xl border border-white/15 bg-[#1F2A30] p-5" onClick={(event) => event.stopPropagation()}>
             <div className="flex items-center justify-between border-b border-white/15 pb-4">
-              <Image src="/white.png" alt="Correa Construction" width={178} height={40} className="h-auto w-[150px] sm:w-[178px] object-contain" />
+              <Image src="/white.png" alt="Correa General Contractors" width={178} height={40} className="h-auto w-[150px] sm:w-[178px] object-contain" />
               <button type="button" className="rounded-lg border border-white/20 px-3 py-1 text-2xl" onClick={() => setMobileOpen(false)}>
                 ×
               </button>
@@ -518,7 +518,7 @@ export function SiteFooter() {
     <footer className="bg-[#11181d] text-white">
       <div className="grid w-full gap-10 px-6 py-16 md:grid-cols-2 lg:grid-cols-4 md:px-10 lg:px-14">
         <div>
-          <Image src="/white.png" alt="Correa Construction" width={170} height={36} className="object-contain" />
+          <Image src="/white.png" alt="Correa General Contractors" width={170} height={36} className="object-contain" />
           <p className="mt-4 text-sm leading-7 text-white/80">
             Correa General Contractors for residential and commercial projects
             across Dallas-Fort Worth.

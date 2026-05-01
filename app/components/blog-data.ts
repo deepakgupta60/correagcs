@@ -25,7 +25,7 @@ export const blogPosts: BlogPost[] = [
       "A reliable construction budget starts with clear scope definition. Without scope clarity, estimates remain unstable and change orders become frequent.",
       "Break your budget into core buckets: design and permitting, civil or structural work, MEP, finishes, labor, supervision, and compliance. Allocate contingency based on project complexity.",
       "Use milestone-based reviews before procurement, midway execution, and pre-handover. These checkpoints reduce surprise costs and improve decision speed.",
-      "At Correa Construction, we recommend budget dashboards shared with owners weekly so project visibility remains high across teams.",
+      "At Correa General Contractors, we recommend budget dashboards shared with owners weekly so project visibility remains high across teams.",
     ],
   },
   {

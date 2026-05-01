@@ -4,9 +4,9 @@ import { BulletList, ContentSection, PageCta, PageHero } from "../components/inn
 import { SubcontractorRegistrationForm } from "../components/forms";
 
 export const metadata: Metadata = {
-  title: "Subcontractor Registration | Correa Construction",
+  title: "Subcontractor Registration | Correa General Contractors",
   description:
-    "Register as a subcontractor with Correa Construction for upcoming residential and commercial projects in the Dallas-Fort Worth region.",
+    "Register as a subcontractor with Correa General Contractors for upcoming residential and commercial projects in the Dallas-Fort Worth region.",
 };
 
 export default function SubcontractorsPage() {
@@ -16,7 +16,7 @@ export default function SubcontractorsPage() {
       <main>
         <PageHero
           eyebrow="SUBCONTRACTORS"
-          title="Work With Correa Construction"
+          title="Work With Correa General Contractors"
           description="We partner with skilled subcontractors committed to safety, quality, and schedule reliability."
         />
         <ContentSection title="Partner Requirements">
@@ -42,10 +42,10 @@ export default function SubcontractorsPage() {
         <ContentSection title="Subcontractor Contact Desk">
           <BulletList
             items={[
-              "Phone: +1 (555) 202-8811",
-              "Email: trades@correabuild.com",
-              "Address: 245 Harbor Street, Suite 18, Dallas, TX 75201",
-              "Hours: Monday - Friday, 9:00 AM - 6:00 PM",
+              "Phone: +1 (469) 854-3445",
+              "Email: trades@correagcs.com",
+              "Address: 16210 Seagoville Rd, Dallas, TX 75253, USA",
+              "Hours: Monday - Friday, 7:00 AM - 5:00 PM",
             ]}
           />
         </ContentSection>

@@ -20,7 +20,7 @@ import {
 export const metadata: Metadata = {
   title: "General Contractor in Dallas | Correa General Contractors",
   description:
-    "Correa Construction provides residential and commercial construction, design-build, renovation, and consultation services across Dallas-Fort Worth.",
+    "Correa General Contractors provides residential and commercial construction, design-build, renovation, and consultation services across Dallas-Fort Worth.",
 };
 
 export default function Home() {
