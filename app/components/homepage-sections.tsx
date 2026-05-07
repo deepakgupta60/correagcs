@@ -521,12 +521,13 @@ export function SiteFooter() {
           <Image src="/white.png" alt="Correa General Contractors" width={170} height={36} className="object-contain" />
           <p className="mt-4 text-sm leading-7 text-white/80">
             Correa General Contractors for residential and commercial projects
-            across Dallas-Fort Worth.
+            across Dallas-Fort Worth.``
           </p>
           <div className="mt-4 flex gap-3 text-sm">
-            <Link href="https://www.facebook.com" className="rounded-full border border-white/20 px-3 py-1 hover:border-[#C2A57A] hover:text-[#C2A57A]">Facebook</Link>
-            <Link href="https://www.instagram.com" className="rounded-full border border-white/20 px-3 py-1 hover:border-[#C2A57A] hover:text-[#C2A57A]">Instagram</Link>
-            <Link href="https://www.linkedin.com" className="rounded-full border border-white/20 px-3 py-1 hover:border-[#C2A57A] hover:text-[#C2A57A]">LinkedIn</Link>
+            <Link href="https://www.facebook.com/correageneralcontractors/" className="rounded-full border border-white/20 px-3 py-1 hover:border-[#C2A57A] hover:text-[#C2A57A]">Facebook</Link>
+            <Link href="https://www.instagram.com/correageneralcontractors/" className="rounded-full border border-white/20 px-3 py-1 hover:border-[#C2A57A] hover:text-[#C2A57A]">Instagram</Link>
+            <Link href="https://www.linkedin.com/company/correa-general-contractors" className="rounded-full border border-white/20 px-3 py-1 hover:border-[#C2A57A] hover:text-[#C2A57A]">LinkedIn</Link>
+            <Link href="https://www.youtube.com/channel/UCxnOdSW1oTBPt2io6mPbwOQ" className="rounded-full border border-white/20 px-3 py-1 hover:border-[#C2A57A] hover:text-[#C2A57A]">YouTube</Link>
           </div>
         </div>
         <div>
