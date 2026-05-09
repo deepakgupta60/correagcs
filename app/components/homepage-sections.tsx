@@ -513,55 +513,150 @@ export function BlogSection({ posts }: { posts: BlogPost[] }) {
   );
 }
 
+
+
 export function SiteFooter() {
   return (
     <footer className="bg-[#11181d] text-white">
-      <div className="grid w-full gap-10 px-6 py-16 md:grid-cols-2 lg:grid-cols-4 md:px-10 lg:px-14">
+      <div className="grid w-full gap-10 px-6 py-16 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 md:px-10 lg:px-14">
+        
+        {/* Column 1 */}
         <div>
-          <Image src="/white.png" alt="Correa General Contractors" width={170} height={36} className="object-contain" />
+          <Image
+            src="/white.png"
+            alt="Correa General Contractors"
+            width={170}
+            height={36}
+            className="object-contain"
+          />
+
           <p className="mt-4 text-sm leading-7 text-white/80">
             Correa General Contractors for residential and commercial projects
-            across Dallas-Fort Worth.``
+            across Dallas-Fort Worth.
           </p>
-          <div className="mt-4 flex gap-3 text-sm">
-            <Link href="https://www.facebook.com/correageneralcontractors/" className="rounded-full border border-white/20 px-3 py-1 hover:border-[#C2A57A] hover:text-[#C2A57A]">Facebook</Link>
-            <Link href="https://www.instagram.com/correageneralcontractors/" className="rounded-full border border-white/20 px-3 py-1 hover:border-[#C2A57A] hover:text-[#C2A57A]">Instagram</Link>
-            <Link href="https://www.linkedin.com/company/correa-general-contractors" className="rounded-full border border-white/20 px-3 py-1 hover:border-[#C2A57A] hover:text-[#C2A57A]">LinkedIn</Link>
-            <Link href="https://www.youtube.com/channel/UCxnOdSW1oTBPt2io6mPbwOQ" className="rounded-full border border-white/20 px-3 py-1 hover:border-[#C2A57A] hover:text-[#C2A57A]">YouTube</Link>
+
+          <div className="mt-4 flex flex-wrap gap-3 text-sm">
+            <Link
+              href="https://www.facebook.com/correageneralcontractors/"
+              className="rounded-full border border-white/20 px-3 py-1 hover:border-[#C2A57A] hover:text-[#C2A57A]"
+            >
+              Facebook
+            </Link>
+
+            <Link
+              href="https://www.instagram.com/correageneralcontractors/"
+              className="rounded-full border border-white/20 px-3 py-1 hover:border-[#C2A57A] hover:text-[#C2A57A]"
+            >
+              Instagram
+            </Link>
+
+            <Link
+              href="https://www.linkedin.com/company/correa-general-contractors"
+              className="rounded-full border border-white/20 px-3 py-1 hover:border-[#C2A57A] hover:text-[#C2A57A]"
+            >
+              LinkedIn
+            </Link>
+
+            <Link
+              href="https://www.youtube.com/channel/UCxnOdSW1oTBPt2io6mPbwOQ"
+              className="rounded-full border border-white/20 px-3 py-1 hover:border-[#C2A57A] hover:text-[#C2A57A]"
+            >
+              YouTube
+            </Link>
           </div>
         </div>
+
+        {/* Column 2 */}
         <div>
           <h3 className="text-2xl font-semibold">Quick Links</h3>
+
           <ul className="mt-4 space-y-2 text-sm text-white/80">
-            <li><Link href="/" className="hover:text-[#C2A57A]">Home</Link></li>
-            <li><Link href="/services" className="hover:text-[#C2A57A]">Services</Link></li>
-            <li><Link href="/about-us" className="hover:text-[#C2A57A]">About</Link></li>
-            <li><Link href="/contact-us" className="hover:text-[#C2A57A]">Get in Touch</Link></li>
-            <li><Link href="/build-with-us" className="hover:text-[#C2A57A]">Contacts</Link></li>
-            <li><Link href="/blog" className="hover:text-[#C2A57A]">Blog</Link></li>
-            <li><Link href="/subcontractors" className="hover:text-[#C2A57A]">Subcontractors</Link></li>
+            <li>
+              <Link href="/" className="hover:text-[#C2A57A]">
+                Home
+              </Link>
+            </li>
+
+            <li>
+              <Link href="/services" className="hover:text-[#C2A57A]">
+                Services
+              </Link>
+            </li>
+
+            <li>
+              <Link href="/about-us" className="hover:text-[#C2A57A]">
+                About
+              </Link>
+            </li>
+
+            <li>
+              <Link href="/contact-us" className="hover:text-[#C2A57A]">
+                Get in Touch
+              </Link>
+            </li>
+
+            <li>
+              <Link href="/build-with-us" className="hover:text-[#C2A57A]">
+                Contacts
+              </Link>
+            </li>
+
+            <li>
+              <Link href="/blog" className="hover:text-[#C2A57A]">
+                Blog
+              </Link>
+            </li>
+
+            <li>
+              <Link href="/subcontractors" className="hover:text-[#C2A57A]">
+                Subcontractors
+              </Link>
+            </li>
           </ul>
         </div>
+
+        {/* Column 3 */}
         <div>
           <h3 className="text-2xl font-semibold">Contact</h3>
+
           <ul className="mt-4 space-y-2 text-sm text-white/80">
             <li>+1 (469) 854-3445</li>
             <li>hello@correagcs.com</li>
             <li>16210 Seagoville Rd, Dallas, TX 75253, USA</li>
           </ul>
         </div>
+
+        {/* Column 4 */}
         <div>
           <h3 className="text-2xl font-semibold">Support</h3>
+
           <ul className="mt-4 space-y-2 text-sm text-white/80">
             <li>Mon - Fri: 9:00 AM - 6:00 PM</li>
-            <li><Link href="/contact-us" className="hover:text-[#C2A57A]">Book a Consultation</Link></li>
-            <li><Link href="/subcontractors" className="hover:text-[#C2A57A]">Trade Registration</Link></li>
-            <li><Link href="/build-with-us" className="hover:text-[#C2A57A]">Partnership Request</Link></li>
+
+            <li>
+              <Link href="/contact-us" className="hover:text-[#C2A57A]">
+                Book a Consultation
+              </Link>
+            </li>
+
+            <li>
+              <Link href="/subcontractors" className="hover:text-[#C2A57A]">
+                Trade Registration
+              </Link>
+            </li>
+
+            <li>
+              <Link href="/build-with-us" className="hover:text-[#C2A57A]">
+                Partnership Request
+              </Link>
+            </li>
           </ul>
         </div>
       </div>
+
       <div className="border-t border-white/10 px-6 py-4 text-center text-xs text-white/60 md:px-10 lg:px-14">
-        © {new Date().getFullYear()} Correa General Contractors. All rights reserved.
+        © {new Date().getFullYear()} Correa General Contractors. All rights
+        reserved.
       </div>
     </footer>
   );
