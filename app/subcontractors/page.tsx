@@ -43,7 +43,7 @@ export default function SubcontractorsPage() {
           <BulletList
             items={[
               "Phone: +1 (469) 345-9287",
-              "Email: trades@correagcs.com",
+              "Email: hello@correabuild.com",
               "Address: 16210 - B, Seagoville Rd, Dallas, TX 75253, USA",
               "Hours: Monday - Friday, 7:00 AM - 5:00 PM",
             ]}
