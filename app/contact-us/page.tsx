@@ -23,7 +23,7 @@ const contactCards = [
   },
   {
     title: "Office",
-    value: "16210 Seagoville Rd, Dallas, TX 75253, USA",
+    value: "16210 - B, Seagoville Rd, Dallas, TX 75253, USA",
     href: "https://maps.app.goo.gl/DhvXe4BDYzktbs6Y7",
   },
 ];

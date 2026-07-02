@@ -44,7 +44,7 @@ export default function SubcontractorsPage() {
             items={[
               "Phone: +1 (469) 854-3445",
               "Email: trades@correagcs.com",
-              "Address: 16210 Seagoville Rd, Dallas, TX 75253, USA",
+              "Address: 16210 - B, Seagoville Rd, Dallas, TX 75253, USA",
               "Hours: Monday - Friday, 7:00 AM - 5:00 PM",
             ]}
           />
