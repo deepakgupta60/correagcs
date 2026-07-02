@@ -620,7 +620,7 @@ export function SiteFooter() {
           <h3 className="text-2xl font-semibold">Contact</h3>
 
           <ul className="mt-4 space-y-2 text-sm text-white/80">
-            <li>+1 (469) 854-3445</li>
+            <li>+1 (469) 345-9287</li>
             <li>hello@correagcs.com</li>
             <li>16210 - B, Seagoville Rd, Dallas, TX 75253, USA</li>
           </ul>

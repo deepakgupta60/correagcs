@@ -44,7 +44,7 @@ export default function ContactPage() {
         <ContentSection title="Reach Our Team">
           <BulletList
             items={[
-              "Phone: +1 (469) 854-3445",
+              "Phone: +1 (469) 345-9287",
               "Email: hello@correabuild.com",
               "Office: 245 Harbor Street, Suite 18, Dallas, TX",
               "Hours: Monday - Friday, 9:00 AM to 6:00 PM",
