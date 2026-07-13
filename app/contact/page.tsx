@@ -45,8 +45,8 @@ export default function ContactPage() {
           <BulletList
             items={[
               "Phone: +1 (469) 345-9287",
-              "Email: hello@correabuild.com",
-              "Office: 245 Harbor Street, Suite 18, Dallas, TX",
+              "Email: hello@correagcs.com",
+              "Office: 16210 - B, Seagoville Rd, Dallas, TX 75253, USA",
               "Hours: Monday - Friday, 9:00 AM to 6:00 PM",
             ]}
           />
