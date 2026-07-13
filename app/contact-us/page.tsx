@@ -13,8 +13,8 @@ export const metadata: Metadata = {
 const contactCards = [
   {
     title: "Phone",
-    value: "+1 (469) 345-9287",
-    href: "tel:+14698543445 ",
+    value: "+1 (469) 854-0207",
+    href: "tel:+14698540207",
   },
   {
     title: "Email",

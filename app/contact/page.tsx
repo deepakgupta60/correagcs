@@ -44,7 +44,7 @@ export default function ContactPage() {
         <ContentSection title="Reach Our Team">
           <BulletList
             items={[
-              "Phone: +1 (469) 345-9287",
+              "Phone: +1 (469) 854-0207",
               "Email: hello@correagcs.com",
               "Office: 16210 - B, Seagoville Rd, Dallas, TX 75253, USA",
               "Hours: Monday - Friday, 9:00 AM to 6:00 PM",
