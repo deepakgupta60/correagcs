@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { blogPosts } from "./components/blog-data";
 import { projectsData } from "./components/project-data";
 
-const BASE_URL = "https://correaconstruction.com";
+const BASE_URL = "https://correagcs.com";
 
 const routes = [
   "",

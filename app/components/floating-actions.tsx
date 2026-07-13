@@ -19,7 +19,7 @@ export function FloatingActions() {
   return (
     <div className="fixed bottom-6 right-4 z-[70] flex flex-col gap-3">
       <a
-        href="tel:+14698543445"
+        href="tel:+14698540207"
         aria-label="Call now"
         className="flex h-11 w-11 items-center justify-center rounded-full bg-[#C2A57A] text-white shadow-lg transition hover:bg-[#ad9169]"
       >
