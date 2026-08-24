@@ -56,10 +56,10 @@ export default function Home() {
 
   const featuredProjects = [
     {
-      title: "Oceanfront Luxury Villa",
+      title: "Westhouse Apartment",
       image:
-        "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=80",
-      href: "/projects/oceanfront-luxury-villa",
+        "/projects/westhouse/4.jpeg",
+      href: "/projects/westhouse-apartment",
     },
     {
       title: "Westside Corporate Hub",

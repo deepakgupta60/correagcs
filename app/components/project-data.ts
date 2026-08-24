@@ -14,26 +14,31 @@ export type ProjectItem = {
 
 export const projectsData: ProjectItem[] = [
   {
-    slug: "oceanfront-luxury-villa",
-    title: "Oceanfront Luxury Villa",
+    slug: "westhouse-apartment",
+    title: "Westhouse Apartment",
     summary:
-      "Premium residential villa delivery with modern architecture and precision finish execution.",
+      "Premium residential apartment delivery with modern architecture and precision finish execution.",
     description: [
-      "This custom villa project focused on contemporary design language with structural durability for a coastal environment.",
-      "Our team managed planning, procurement, interior detailing, and quality checks to ensure premium handover standards.",
+      "The Westhouse Apartments project in Keller, TX demonstrates Correa Masonry's proficiency in large-scale multi-family construction. This impressive development features a sophisticated exterior combining brick, cast stone, and architectural stone elements. Completed in 2020, the project showcases clean lines, durable craftsmanship, and a timeless aesthetic that enhances the North Texas rental market. Built with precision and attention to detail, Westhouse Apartments delivers both visual appeal and long-lasting quality.",
     ],
     heroImage:
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1483366774565-c783b9f70e2c?auto=format&fit=crop&w=1600&q=80",
     gallery: [
-      "https://images.unsplash.com/photo-1600607687644-c7171b42498f?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1600047509782-20d39509f26d?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=80",
+      "/projects/westhouse/1.jpeg",
+      "/projects/westhouse/2.jpeg",
+      "/projects/westhouse/3.jpeg",
+      "/projects/westhouse/4.jpeg",
+      "/projects/westhouse/5.jpeg",
+      "/projects/westhouse/6.jpeg",
+      "/projects/westhouse/7.jpeg",
+      "/projects/westhouse/8.jpeg",
     ],
-    video: "/project.mp4",
-    location: "Dallas Waterfront District",
-    date: "March 2026",
-    owner: "Private Owner Group",
-    category: "Residential",
+
+    video: "https://www.youtube.com/embed/7iilW_Jzuak",
+    location: "Keller, TX",
+    date: "Decemeber 2020",
+    owner: "Westside Business Holdings",
+    category: "Commercial",
   },
 
   {
@@ -48,13 +53,19 @@ export const projectsData: ProjectItem[] = [
     heroImage:
       "https://images.unsplash.com/photo-1483366774565-c783b9f70e2c?auto=format&fit=crop&w=1600&q=80",
     gallery: [
-      "/public/projects/westhouse-1.jpg",
-      "/public/projects/westhouse-2.jpg",
-      "/public/projects/westhouse-3.jpg",
+      "/projects/westhouse/1.jpeg",
+      "/projects/westhouse/2.jpeg",
+      "/projects/westhouse/3.jpeg",
+      "/projects/westhouse/4.jpeg",
+      "/projects/westhouse/5.jpeg",
+      "/projects/westhouse/6.jpeg",
+      "/projects/westhouse/7.jpeg",
+      "/projects/westhouse/8.jpeg",
     ],
-    video: "/project.mp4",
-    location: "West Dallas, TX",
-    date: "January 2026",
+
+    video: "https://www.youtube.com/embed/7iilW_Jzuak",
+    location: "Keller, TX",
+    date: "Decemeber 2020",
     owner: "Westside Business Holdings",
     category: "Commercial",
   },
