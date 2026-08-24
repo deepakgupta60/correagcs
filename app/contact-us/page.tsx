@@ -18,8 +18,8 @@ const contactCards = [
   },
   {
     title: "Email",
-    value: "hello@correagcs.com",
-    href: "mailto:hello@correagcs.com",
+    value: "info@correagcs.com",
+    href: "mailto:info@correagcs.com",
   },
   {
     title: "Office",
