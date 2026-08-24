@@ -58,7 +58,7 @@ export default function Home() {
     {
       title: "Westhouse Apartment",
       image:
-        "/projects/westhouse/4.jpeg",
+        "/projects/westhouse/.jpeg",
       href: "/projects/westhouse-apartment",
     },
     {

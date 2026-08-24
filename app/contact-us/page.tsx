@@ -24,7 +24,7 @@ const contactCards = [
   {
     title: "Office",
     value: "16210 - B, Seagoville Rd, Dallas, TX 75253, USA",
-    href: "https://maps.app.goo.gl/DhvXe4BDYzktbs6Y7",
+    href: "https://maps.app.goo.gl/mT7yTxvdR9j9nouZA",
   },
 ];
 
@@ -38,6 +38,7 @@ export default function ContactUsPage() {
           title="Let's Build Something Great Together"
           description="Share your project goals and connect with our team for planning, budget, scheduling, and execution support."
         />
+          <ContactInquiryForm ctaLabel="Send Inquiry" />
         <section className="py-16 md:py-20">
           <div className="w-full px-6 md:px-10 lg:px-14">
             <div className="grid gap-5 md:grid-cols-3">
@@ -63,18 +64,16 @@ export default function ContactUsPage() {
                 <p className="text-xs font-semibold tracking-[0.22em] text-[#C2A57A]">Google Map</p>
                 <div className="mt-3 overflow-hidden rounded-xl border border-[#dbe3ee]">
                   <iframe
+
                     title="Correa General Contractors Office Location"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d429351.5219142948!2d-97.0808479701444!3d32.7840713956224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864ea130ffff463f%3A0x65e28f354dae77de!2sCorrea%20Masonry%20%26%20Stucco%20LLC!5e0!3m2!1sen!2sin!4v1777629503953!5m2!1sen!2sin"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3039.2018139111156!2d-96.57809642434148!3d32.67468037370647!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864eb1a99f94a2e1%3A0x9f68fe725d258912!2sCorrea%20General%20Contractors!5e1!3m2!1sen!2sin!4v1787585921309!5m2!1sen!2sin"
                     className="h-72 w-full"
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
                   />
                 </div>
               </article>
-            </div>
-
-
-            
+            </div>       
             <div className="reveal-up mt-8 rounded-2xl border border-[#dbe3ee] bg-[#f8fafc] p-6 text-[#475569]">
               <p className="text-sm leading-7">
                 Business Hours: Monday - Friday, 9:00 AM - 6:00 PM. For urgent site requirements, call us directly and our project desk will coordinate immediate support.
@@ -82,7 +81,7 @@ export default function ContactUsPage() {
             </div>
           </div>
         </section>
-        <ContactInquiryForm ctaLabel="Send Inquiry" />
+      
         <PageCta />
       </main>
       <SiteFooter />
