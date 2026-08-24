@@ -16,7 +16,8 @@ export const projectsData: ProjectItem[] = [
   {
     slug: "oceanfront-luxury-villa",
     title: "Oceanfront Luxury Villa",
-    summary: "Premium residential villa delivery with modern architecture and precision finish execution.",
+    summary:
+      "Premium residential villa delivery with modern architecture and precision finish execution.",
     description: [
       "This custom villa project focused on contemporary design language with structural durability for a coastal environment.",
       "Our team managed planning, procurement, interior detailing, and quality checks to ensure premium handover standards.",
@@ -34,10 +35,12 @@ export const projectsData: ProjectItem[] = [
     owner: "Private Owner Group",
     category: "Residential",
   },
+
   {
     slug: "westside-corporate-hub",
     title: "Westside Corporate Hub",
-    summary: "Multi-floor commercial office development designed for high-performance workspaces.",
+    summary:
+      "Multi-floor commercial office development designed for high-performance workspaces.",
     description: [
       "The corporate hub required tight schedule control, MEP coordination, and premium interior delivery across multiple departments.",
       "We executed phased handovers to reduce operational disruption and improve client transition readiness.",
@@ -45,9 +48,9 @@ export const projectsData: ProjectItem[] = [
     heroImage:
       "https://images.unsplash.com/photo-1483366774565-c783b9f70e2c?auto=format&fit=crop&w=1600&q=80",
     gallery: [
-      "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1529429617124-95b109e86bb8?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80",
+      "/public/projects/westhouse-1.jpg",
+      "/public/projects/westhouse-2.jpg",
+      "/public/projects/westhouse-3.jpg",
     ],
     video: "/project.mp4",
     location: "West Dallas, TX",
@@ -55,10 +58,12 @@ export const projectsData: ProjectItem[] = [
     owner: "Westside Business Holdings",
     category: "Commercial",
   },
+
   {
     slug: "summit-logistics-complex",
     title: "Summit Logistics Complex",
-    summary: "Large-format industrial logistics facility with robust utility and circulation planning.",
+    summary:
+      "Large-format industrial logistics facility with robust utility and circulation planning.",
     description: [
       "This project involved high-capacity operational planning for warehousing, loading flow, and service access zones.",
       "Our execution emphasized durability, safety, and clear milestone reporting for investor visibility.",
@@ -66,11 +71,19 @@ export const projectsData: ProjectItem[] = [
     heroImage:
       "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1600&q=80",
     gallery: [
-      "https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80",
+      "/projects/westhouse/1.jpeg",
+      "/projects/westhouse/2.jpeg",
+      "/projects/westhouse/3.jpeg",
+      "/projects/westhouse/4.jpeg",
+      "/projects/westhouse/5.jpeg",
+      "/projects/westhouse/6.jpeg",
+      "/projects/westhouse/7.jpeg",
+      "/projects/westhouse/8.jpeg",
     ],
-    video: "/project.mp4",
+
+    // YouTube Video
+    video: "https://www.youtube.com/embed/7iilW_Jzuak",
+
     location: "North Arlington, TX",
     date: "November 2025",
     owner: "Summit Industrial Partners",
