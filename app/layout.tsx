@@ -74,7 +74,9 @@ export default function RootLayout({
         })(window,document,'script','dataLayer','GTM-W9BVMMLJ');
       `,
     }}
+
   />
+  <meta name="google-site-verification" content="zxOkPhnyasM6TEigOI_i9KSHrluhNIT4utA0wotqJBc" />
     </head>
       <body className="min-h-full flex flex-col">
         <noscript>
