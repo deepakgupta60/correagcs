@@ -34,13 +34,15 @@ export const projectsData: ProjectItem[] = [
       "/projects/westhouse/8.jpeg",
     ],
 
-    video: "https://youtu.be/7iilW_Jzuak",
+    video: "https://www.youtube.com/watch?v=7iilW_Jzuak",
     location: "Keller, TX",
     date: "Decemeber 2020",
     owner: "Westside Business Holdings",
     category: "Commercial",
   },
 
+
+  
   {
     slug: "westside-corporate-hub",
     title: "Westside Corporate Hub",
