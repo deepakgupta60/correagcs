@@ -31,7 +31,7 @@ export async function generateMetadata({
 
   return {
     title: `${project.title} Project | Correa General Contractors`,
-    description: `${project.summary} Location: ${project.location}. Owner: ${project.owner}.`,
+    description: `${project.summary} Location: ${project.location}.`,
     alternates: {
       canonical: `/projects/${project.slug}`,
     },
@@ -84,10 +84,7 @@ export default async function ProjectDetailPage({
                   <span className="font-semibold text-[#1F2A30]">Date:</span>{" "}
                   {project.date}
                 </p>
-                <p>
-                  <span className="font-semibold text-[#1F2A30]">Owner:</span>{" "}
-                  {project.owner}
-                </p>
+              
                 <p>
                   <span className="font-semibold text-[#1F2A30]">
                     Category:
