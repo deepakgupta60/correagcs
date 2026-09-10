@@ -62,16 +62,16 @@ export default function Home() {
       href: "/projects/westhouse-apartment",
     },
     {
-      title: "Westside Corporate Hub",
+      title: "The Cove at Odessa",
       image:
-        "https://images.unsplash.com/photo-1483366774565-c783b9f70e2c?auto=format&fit=crop&w=1000&q=80",
-      href: "/projects/westside-corporate-hub",
+        "/projects/odessa/8.webp",
+      href: "/projects/the-cove-at-odessa",
     },
     {
-      title: "Summit Logistics Complex",
+      title: "Red Oak Duplex",
       image:
-        "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1000&q=80",
-      href: "/projects/summit-logistics-complex",
+        "/projects/redoak/red-oak.webp",
+      href: "/projects/red-oak-duplex",
     },
   ];
 

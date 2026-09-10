@@ -8,7 +8,7 @@ export type ProjectItem = {
   video: string;
   location: string;
   date: string;
-  owner: string;
+  // owner: string;
   category: string;
 };
 
@@ -34,73 +34,74 @@ export const projectsData: ProjectItem[] = [
       "/projects/westhouse/8.jpeg",
     ],
 
-    video: "https://www.youtube.com/watch?v=7iilW_Jzuak",
+    video: "https://www.youtube.com/embed/7iilW_Jzuak",
     location: "Keller, TX",
     date: "Decemeber 2020",
-    owner: "Westside Business Holdings",
     category: "Commercial",
   },
 
 
   
   {
-    slug: "westside-corporate-hub",
-    title: "Westside Corporate Hub",
+    slug: "the-cove-at-odessa",
+    title: "The Cove at Odessa",
     summary:
-      "Multi-floor commercial office development designed for high-performance workspaces.",
+      "Premium multifamily residential delivery with refined brickwork, cultured stone accents, and precision masonry execution",
     description: [
-      "The corporate hub required tight schedule control, MEP coordination, and premium interior delivery across multiple departments.",
-      "We executed phased handovers to reduce operational disruption and improve client transition readiness.",
+      "The Cove is a premium multifamily residential community featuring refined brickwork, cultured stone entryways, and durable CMU structural walls",
+      "Designed for both beauty and longevity, this project showcases Correa Masonry's ability to deliver high-end finishes with precision and reliability across West Texas.",
     ],
     heroImage:
       "https://images.unsplash.com/photo-1483366774565-c783b9f70e2c?auto=format&fit=crop&w=1600&q=80",
     gallery: [
-      "/projects/westhouse/1.jpeg",
-      "/projects/westhouse/2.jpeg",
-      "/projects/westhouse/3.jpeg",
-      "/projects/westhouse/4.jpeg",
-      "/projects/westhouse/5.jpeg",
-      "/projects/westhouse/6.jpeg",
-      "/projects/westhouse/7.jpeg",
-      "/projects/westhouse/8.jpeg",
+      "/projects/odessa/1.jpg",
+      "/projects/odessa/2.jpg",
+      "/projects/odessa/3.jpg",
+      "/projects/odessa/4.jpg",
+      "/projects/odessa/5.jpg",
+      "/projects/odessa/6.jpg",
+      "/projects/odessa/7.jpg",
+      "/projects/odessa/8.webp",
     ],
 
-    video: "https://www.youtube.com/watch?v=7iilW_Jzuak",
-    location: "Keller, TX",
-    date: "Decemeber 2020",
-    owner: "Westside Business Holdings",
+    video: "https://www.youtube.com/embed/rYaxFawmjOM",
+    location: "Odessa, TX",
+    date: "October 2023",
+    // owner: "Westside Business Holdings",
     category: "Commercial",
   },
 
   {
-    slug: "summit-logistics-complex",
-    title: "Summit Logistics Complex",
+    slug: "red-oak-duplex",
+    title: "Red Oak Duplex",
     summary:
-      "Large-format industrial logistics facility with robust utility and circulation planning.",
+      "Contemporary residential development featuring modern design and high-quality construction.",
     description: [
-      "This project involved high-capacity operational planning for warehousing, loading flow, and service access zones.",
-      "Our execution emphasized durability, safety, and clear milestone reporting for investor visibility.",
+      "This project showcases a blend of modern aesthetics and traditional craftsmanship, delivering a unique living experience.",
+      "The development includes energy-efficient features and thoughtful layout designs to maximize comfort and functionality."
+      
     ],
     heroImage:
       "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1600&q=80",
     gallery: [
-      "/projects/westhouse/1.jpeg",
-      "/projects/westhouse/2.jpeg",
-      "/projects/westhouse/3.jpeg",
-      "/projects/westhouse/4.jpeg",
-      "/projects/westhouse/5.jpeg",
-      "/projects/westhouse/6.jpeg",
-      "/projects/westhouse/7.jpeg",
-      "/projects/westhouse/8.jpeg",
+      "/projects/redoak/1.jpg",
+      "/projects/redoak/2.webp",
+      "/projects/redoak/3.webp",
+      "/projects/redoak/4.webp",
+      "/projects/redoak/5.webp",
+      "/projects/redoak/6.webp",
+      "/projects/redoak/7.webp",
+      "/projects/redoak/8.webp",
     ],
 
     // YouTube Video
-    video: "https://www.youtube.com/watch?v=7iilW_Jzuak",
+    video: "https://www.youtube.com/embed/f4Uj71lFFu4",
+   
 
-    location: "North Arlington, TX",
-    date: "November 2025",
-    owner: "Summit Industrial Partners",
-    category: "Industrial",
+    location: "Red Oak, TX",
+    date: "2026",
+    // owner: "Summit Industrial Partners",
+    category: "Commercial",
   },
 ];
 
