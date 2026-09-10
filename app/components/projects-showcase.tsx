@@ -27,7 +27,7 @@ export function ProjectsShowcase({ projects }: { projects: ProjectItem[] }) {
                 <div className="grid gap-1 text-sm text-[#334155]">
                   <p><span className="font-semibold text-[#1F2A30]">Location:</span> {project.location}</p>
                   <p><span className="font-semibold text-[#1F2A30]">Date:</span> {project.date}</p>
-                  <p><span className="font-semibold text-[#1F2A30]">Owner:</span> {project.owner}</p>
+                  {/* <p><span className="font-semibold text-[#1F2A30]">Owner:</span> {project.owner}</p> */}
                 </div>
                 <Link
                   href={`/projects/${project.slug}`}
