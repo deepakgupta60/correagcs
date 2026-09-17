@@ -63,7 +63,8 @@ export default function RootLayout({
       className={`${inter.variable} ${montserrat.variable} h-full antialiased`}
     >
       <head>
-      
+        <link rel="icon" type="image/png" href="/fav.png" />
+
         <script
           dangerouslySetInnerHTML={{
             __html: `
