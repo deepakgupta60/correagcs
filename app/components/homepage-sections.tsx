@@ -208,7 +208,7 @@ export function HeroSection() {
 export function StatsSection({ stats }: { stats: Stat[] }) {
   return (
     <section className="bg-[#C2A57A]">
-      <div className="grid w-full grid-cols-2 px-6 py-10 md:grid-cols-4 md:px-10 lg:px-14">
+      <div className="grid w-full grid-cols-2 px-6 py-6 md:grid-cols-3 md:px-10 lg:px-6">
         {stats.map((stat) => (
           <article key={stat.label} className="reveal-up border-r border-white/30 p-4 text-center last:border-r-0 md:p-6">
             <p className="text-4xl font-bold text-white">{stat.value}</p>
@@ -224,10 +224,10 @@ export function AboutSection() {
   return (
     <SectionContainer id="about">
       <div className="reveal-up grid gap-8 rounded-3xl border border-[#dbe3ee] bg-white p-8 shadow-[0_14px_38px_rgba(16,35,55,0.08)] md:grid-cols-12 md:p-12">
-        <div className="md:col-span-3">
+        {/* <div className="md:col-span-3">
           <p className="text-sm font-semibold tracking-[0.28em] text-[#C2A57A]">ABOUT US</p>
-        </div>
-        <div className="space-y-4 md:col-span-9">
+        </div> */}
+        <div className="space-y-4 md:col-span-12">
           <h2 className="text-3xl leading-tight text-[#1F2A30] md:text-5xl">
             We design and construct spaces built for modern life.
           </h2>

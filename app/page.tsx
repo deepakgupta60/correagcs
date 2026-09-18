@@ -25,9 +25,9 @@ export const metadata: Metadata = {
 
 export default function Home() {
   const stats = [
-    { label: "Projects Completed", value: "25+" },
-    { label: "Client Satisfaction", value: "98%" },
-    { label: "Completed Projects", value: "150+" },
+    { label: "Projects Completed", value: "125+" },
+    { label: "Core Trades", value: "20+" },
+    // { label: "General Contractors", value: "Best" },
     { label: "Years Experience", value: "10+" },
   ];
 
