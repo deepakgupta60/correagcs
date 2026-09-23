@@ -44,7 +44,7 @@ export const serviceDetails: ServiceDetail[] = [
     seoDescription:
       "Design build services in Dallas with one accountable team for architecture, engineering, and construction.",
     heroImage:
-      "https://images.unsplash.com/photo-1523419409543-0f3d884e1f83?auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80",
     heroVideo:
       "https://videos.pexels.com/video-files/3244425/3244425-uhd_2732_1440_25fps.mp4",
     gallery: [

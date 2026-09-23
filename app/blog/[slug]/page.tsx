@@ -61,7 +61,7 @@ export default async function BlogDetailPage({ params }: BlogDetailProps) {
         <section className="bg-gradient-to-r from-[#11181d] via-[#1F2A30] to-[#24343d] py-24 text-white md:py-32">
           <div className="w-full px-6 md:px-10 lg:px-14">
             <p className="text-sm font-semibold tracking-[0.28em] text-[#C2A57A]">BLOG ARTICLE</p>
-            <h1 className="mt-4 max-w-4xl text-4xl font-semibold leading-tight md:text-6xl">{post.title}</h1>
+            <h1 className="mt-4 max-full text-4xl font-semibold leading-tight md:text-6xl">{post.title}</h1>
             <p className="mt-5 text-sm text-white/75">{post.date}</p>
           </div>
         </section>

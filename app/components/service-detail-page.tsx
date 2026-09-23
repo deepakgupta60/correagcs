@@ -70,7 +70,7 @@ export function ServiceDetailPage({ service }: { service: ServiceDetail }) {
         </section>
 
         <section className="w-full bg-[#F5F5F5] px-6 py-20 md:px-10 lg:px-14">
-          <div className="reveal-up max-w-5xl">
+          <div className="reveal-up w-full">
             <h2 className="text-3xl text-[#1F2A30] md:text-5xl">
               Why choose our {service.title.toLowerCase()} service?
             </h2>

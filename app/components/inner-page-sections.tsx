@@ -13,7 +13,7 @@ export function PageHero({
     <section className="bg-gradient-to-r from-[#11181d] via-[#1F2A30] to-[#24343d] py-24 text-white md:py-32">
       <div className="w-full px-6 md:px-10 lg:px-14">
         <p className="text-sm font-semibold tracking-[0.3em] text-[#C2A57A]">{eyebrow}</p>
-        <h1 className="mt-4 max-w-4xl text-4xl font-semibold leading-tight md:text-6xl">{title}</h1>
+        <h1 className="mt-4 w-full text-4xl font-semibold leading-tight md:text-6xl">{title}</h1>
         <p className="mt-5 max-w-3xl text-lg text-white/80">{description}</p>
       </div>
     </section>
@@ -31,7 +31,7 @@ export function ContentSection({
     <section className="py-16 md:py-20">
       <div className="w-full px-6 md:px-10 lg:px-14">
         <h2 className="text-3xl font-semibold text-[#1F2A30] md:text-5xl">{title}</h2>
-        <div className="mt-6 max-w-4xl space-y-4 rounded-2xl border border-[#dbe3ee] bg-white p-6 text-base leading-8 text-[#6B7280] shadow-[0_10px_24px_rgba(10,30,40,0.07)] md:text-lg">
+        <div className="mt-6 w-full space-y-4 rounded-2xl border border-[#dbe3ee] bg-white p-6 text-base leading-8 text-[#6B7280] shadow-[0_10px_24px_rgba(10,30,40,0.07)] md:text-lg">
           {children}
         </div>
       </div>

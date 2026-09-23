@@ -61,7 +61,7 @@ export default async function ProjectDetailPage({
             <p className="text-sm font-semibold tracking-[0.28em] text-[#C2A57A]">
               PROJECT DETAIL
             </p>
-            <h1 className="mt-4 max-w-4xl text-4xl font-semibold leading-tight md:text-6xl">
+            <h1 className="mt-4 w-full text-4xl font-semibold leading-tight md:text-6xl">
               {project.title}
             </h1>
             <p className="mt-5 max-w-3xl text-lg text-white/80">

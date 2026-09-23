@@ -231,7 +231,7 @@ export function AboutSection() {
           <h2 className="text-3xl leading-tight text-[#1F2A30] md:text-5xl">
             We design and construct spaces built for modern life.
           </h2>
-          <p className="max-w-4xl text-base leading-8 text-[#64748B] md:text-lg">
+          <p className="w-full text-base leading-8 text-[#64748B] md:text-lg">
             From early planning and permits to final handover, our team keeps your
             project smooth, transparent, and on schedule. We combine practical site
             leadership with quality craftsmanship to deliver long-lasting results.
