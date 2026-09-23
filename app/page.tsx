@@ -25,10 +25,10 @@ export const metadata: Metadata = {
 
 export default function Home() {
   const stats = [
-    { label: "Projects Completed", value: "125+" },
+    { label: "Projects Completed", value: "200+" },
     { label: "Core Trades", value: "20+" },
     // { label: "General Contractors", value: "Best" },
-    { label: "Years Experience", value: "10+" },
+    { label: "Years Experience", value: "15+" },
   ];
 
   const projectTypeCards = [
