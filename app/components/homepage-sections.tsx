@@ -564,6 +564,27 @@ export function SiteFooter() {
               YouTube
             </Link>
           </div>
+
+
+{/* Google Preferred Source Badge */}
+          <div className="mt-5">
+            <Link
+              href="https://www.google.com/preferences/source?q=https://correagcs.com" // Yahan apna Google News / Profile link dalein
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block transition-transform hover:scale-105"
+            >
+              <Image
+                src="/google-badge-gcs.png"
+                alt="Add as a Preferred Source on Google"
+                width={200}
+                height={60}
+                className="h-auto w-48 object-contain"
+              />
+            </Link>
+          </div>
+
+
         </div>
 
         {/* Column 2 */}
