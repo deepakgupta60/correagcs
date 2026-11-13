@@ -178,7 +178,7 @@ export function HeroSection() {
   return (
     <section id="home" className="relative flex min-h-[90vh] items-center overflow-hidden">
       <video autoPlay loop muted playsInline className="absolute inset-0 h-full w-full object-cover" poster="/black.png">
-        <source src="/project.mp4" type="video/mp4" />
+        <source src="/projects.mp4" type="video/mp4" />
       </video>
       <div className="absolute inset-0 bg-gradient-to-r from-[#11181d]/88 via-[#1f2a30]/72 to-[#1f2a30]/48" />
       <div className="relative z-10 w-full px-6 pt-32 md:px-10 md:pt-28 lg:px-14">
@@ -231,7 +231,7 @@ export function AboutSection() {
           <h2 className="text-3xl leading-tight text-[#1F2A30] md:text-5xl">
             We design and construct spaces built for modern life.
           </h2>
-          <p className="w-full text-base leading-8 text-[#64748B] md:text-lg">
+          <p className="max-w-4xl text-base leading-8 text-[#64748B] md:text-lg">
             From early planning and permits to final handover, our team keeps your
             project smooth, transparent, and on schedule. We combine practical site
             leadership with quality craftsmanship to deliver long-lasting results.

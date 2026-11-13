@@ -35,22 +35,22 @@ export default function Home() {
     {
       title: "Residential Builds",
       image:
-        "https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=1000&q=80",
+        "/Residential-Construction.jpg",
     },
     {
       title: "Commercial Spaces",
       image:
-        "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1000&q=80",
+        "/Commercial-Construction.jpg",
     },
     {
       title: "Industrial Projects",
       image:
-        "https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1000&q=80",
+        "/Industrial-Construction.jpg",
     },
     {
       title: "Interior Renovation",
       image:
-        "https://images.unsplash.com/photo-1600607687644-c7171b42498f?auto=format&fit=crop&w=1000&q=80",
+        "/Interior-Renovation.jpg",
     },
   ];
 
