@@ -2,6 +2,7 @@ import { blogPosts } from "../components/blog-data";
 import { locationPages } from "../components/location-data";
 import { projectsData } from "../components/project-data";
 import { serviceDetails } from "../components/service-data";
+import { AUTHOR, FOUNDER } from "../lib/people";
 import { SITE, absoluteUrl } from "../lib/site";
 
 export const dynamic = "force-static";
@@ -23,6 +24,7 @@ export function GET() {
     `- Email: ${SITE.email}`,
     `- Hours: ${SITE.hours.label}`,
     `- Service area: ${SITE.serviceAreas.join(", ")} and the Dallas–Fort Worth metroplex`,
+    `- Founder & President: ${FOUNDER.name}`,
     `- Google Maps: ${SITE.mapsUrl}`,
     "",
     "## Services",
@@ -40,7 +42,13 @@ export function GET() {
     "",
     "## Contact",
     `- [Request a free estimate](${absoluteUrl("/contact-us")})`,
-    `- [About the company](${absoluteUrl("/about-us")})`,
+    `- [About the company and founder](${absoluteUrl("/about-us")})`,
+    "",
+    "## Optional",
+    `- [Full site content as plain text](${absoluteUrl("/llms-full.txt")}): every service, FAQ, project and guide in one file`,
+    `- [Blog RSS feed](${absoluteUrl("/feed.xml")})`,
+    `- [Author: ${AUTHOR.name}](${absoluteUrl(`/author/${AUTHOR.slug}`)})`,
+    `- [XML sitemap](${absoluteUrl("/sitemap.xml")})`,
     "",
   ];
 

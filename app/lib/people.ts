@@ -49,8 +49,7 @@ export const FOUNDER: Person = {
     "Humberto Correa founded Correa General Contractors to give Dallas–Fort Worth property owners one accountable partner for commercial and residential construction, from budgeting and permits through final handover.",
     "Humberto also serves as President & CEO of Correa Masonry & Stucco LLC, a commercial masonry and stucco contractor working on projects across Texas. That hands-on masonry background shows in the company's multifamily work, including the brick, cast stone, and architectural stone exteriors at Westhouse Apartments in Keller and The Cove at Odessa.",
   ],
-  // Add a real headshot at public/images/team/humberto-correa.jpg, then set: "/images/team/humberto-correa.jpg"
-  photo: "",
+  photo: "/images/team/humberto-correa.jpg",
   linkedin: "https://www.linkedin.com/in/humberto-correa/",
   expertise: [
     "General contracting",

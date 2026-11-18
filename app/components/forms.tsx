@@ -104,6 +104,15 @@ function useEmailForm(formType: string) {
             data.contactPerson ||
             "Not provided",
 
+          // Alias for templates that use {{name}} (e.g. EmailJS "From Name").
+          name:
+            data.fullName ||
+            data.contactPerson ||
+            "Website visitor",
+
+          // Ready-made subject, usable as {{subject}} in the EmailJS template.
+          subject: `New ${formType} – ${data.fullName || data.companyName || "website"}`,
+
           company_name:
             data.companyName ||
             "Not provided",

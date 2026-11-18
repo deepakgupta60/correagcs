@@ -41,6 +41,9 @@ export const metadata: Metadata = {
   category: "Construction",
   alternates: {
     canonical: "./",
+    types: {
+      "application/rss+xml": [{ url: "/feed.xml", title: "Correa General Contractors Blog" }],
+    },
   },
   openGraph: {
     title: "General Contractor in Dallas, TX | Correa General Contractors",

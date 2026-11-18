@@ -30,7 +30,7 @@ export function FounderSection({ person }: { person: Person }) {
       <div className="grid w-full items-center gap-10 px-6 md:px-10 lg:grid-cols-12 lg:gap-14 lg:px-14">
         <div className="lg:col-span-4">
           {person.photo ? (
-            <div className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-3xl shadow-[0_18px_40px_rgba(10,30,40,0.15)]">
+            <div className="relative mx-auto aspect-square w-full max-w-sm overflow-hidden rounded-3xl shadow-[0_18px_40px_rgba(10,30,40,0.15)]">
               <Image src={person.photo} alt={`${person.name}, ${person.jobTitle} of Correa General Contractors`} fill className="object-cover" sizes="(max-width: 1024px) 90vw, 33vw" />
             </div>
           ) : (
