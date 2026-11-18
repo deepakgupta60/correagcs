@@ -1,88 +1,89 @@
-import type { Metadata } from "next";
-import Link from "next/link";
 import { ContactInquiryForm } from "../components/forms";
 import { SiteFooter, SiteHeader } from "../components/homepage-sections";
-import { PageCta, PageHero } from "../components/inner-page-sections";
+import { FaqSection, PageHero, HeroContactCard } from "../components/inner-page-sections";
+import { JsonLd, ORG_ID, pageMetadata } from "../lib/seo";
+import { SITE, absoluteUrl } from "../lib/site";
 
-export const metadata: Metadata = {
-  title: "Get in Touch | Correa General Contractors",
+export const metadata = pageMetadata({
+  title: "Contact Us | Free Construction Estimate in Dallas",
   description:
-    "Contact Correa General Contractors for residential and commercial projects. Reach us by phone, email, or office visit and request a consultation.",
-};
+    "Contact Correa General Contractors in Dallas, TX. Call (469) 854-0207, email info@correagcs.com, or request a free estimate for your commercial or residential project.",
+  path: "/contact-us",
+});
 
-const contactCards = [
-  {
-    title: "Phone",
-    value: "+1 (469) 854-0207",
-    href: "tel:+14698540207",
-  },
-  {
-    title: "Email",
-    value: "info@correagcs.com",
-    href: "mailto:info@correagcs.com",
-  },
-  {
-    title: "Office",
-    value: "16210 - B, Seagoville Rd, Dallas, TX 75253, USA",
-    href: "https://maps.app.goo.gl/mT7yTxvdR9j9nouZA",
-  },
+const faqs = [
+  { question: "How quickly will you respond to my inquiry?", answer: "We review every inquiry during business hours and follow up to schedule a consultation. For time-sensitive site needs, call us directly at (469) 854-0207." },
+  { question: "What information should I include?", answer: "Share your project type (commercial or residential), the property address or city, approximate size, target timeline, and any drawings you have. The more detail, the more useful our first conversation will be." },
+  { question: "Is the estimate free?", answer: "Yes. Initial consultations and project estimates are free. For larger projects that need detailed pre-construction work, we will discuss the scope of a pre-construction agreement up front." },
 ];
 
 export default function ContactUsPage() {
   return (
     <div className="bg-white">
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          name: `Contact ${SITE.name}`,
+          url: absoluteUrl("/contact-us"),
+          about: { "@id": ORG_ID },
+        }}
+      />
       <SiteHeader />
-      <main>
+      <main id="main-content">
         <PageHero
-          eyebrow="GET IN TOUCH"
-          title="Let's Build Something Great Together"
-          description="Share your project goals and connect with our team for planning, budget, scheduling, and execution support."
+          aside={<HeroContactCard />}
+          eyebrow="CONTACT US"
+          title="Get a Free Construction Estimate in Dallas"
+          description="Tell us about your commercial or residential project and our team will follow up with next steps, budget guidance, and a consultation."
+          crumbs={[{ name: "Contact Us", path: "/contact-us" }]}
         />
-          <ContactInquiryForm ctaLabel="Send Inquiry" />
-        <section className="py-16 md:py-20">
-          <div className="w-full px-6 md:px-10 lg:px-14">
-            <div className="grid gap-5 md:grid-cols-3">
-              {contactCards.map((card) => (
-                <article key={card.title} className="reveal-up rounded-2xl border border-[#dbe3ee] bg-white p-6 shadow-[0_10px_24px_rgba(10,30,40,0.07)]">
-                  <p className="text-xs font-semibold tracking-[0.22em] text-[#C2A57A]">{card.title}</p>
-                  <Link href={card.href} className="mt-3 block text-lg font-semibold text-[#1F2A30] hover:text-[#C2A57A]">
-                    {card.value}
-                  </Link>
-                </article>
-              ))}
-            </div>
-            <div className="mt-8 grid gap-5 md:grid-cols-3">
-              <article className="reveal-up rounded-2xl border border-[#dbe3ee] bg-white p-6 shadow-[0_10px_24px_rgba(10,30,40,0.07)]">
-                <p className="text-xs font-semibold tracking-[0.22em] text-[#C2A57A]">Social Media</p>
-                <div className="mt-3 grid gap-2 text-sm">
-                  <Link href="https://www.facebook.com" className="font-semibold text-[#1F2A30] hover:text-[#C2A57A]">Facebook</Link>
-                  <Link href="https://www.instagram.com" className="font-semibold text-[#1F2A30] hover:text-[#C2A57A]">Instagram</Link>
-                  <Link href="https://www.linkedin.com" className="font-semibold text-[#1F2A30] hover:text-[#C2A57A]">LinkedIn</Link>
-                </div>
-              </article>
-              <article className="reveal-up rounded-2xl border border-[#dbe3ee] bg-white p-6 shadow-[0_10px_24px_rgba(10,30,40,0.07)] md:col-span-2">
-                <p className="text-xs font-semibold tracking-[0.22em] text-[#C2A57A]">Google Map</p>
-                <div className="mt-3 overflow-hidden rounded-xl border border-[#dbe3ee]">
-                  <iframe
 
-                    title="Correa General Contractors Office Location"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3039.2018139111156!2d-96.57809642434148!3d32.67468037370647!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864eb1a99f94a2e1%3A0x9f68fe725d258912!2sCorrea%20General%20Contractors!5e1!3m2!1sen!2sin!4v1787585921309!5m2!1sen!2sin"
-                    className="h-72 w-full"
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                  />
-                </div>
-              </article>
-            </div>       
-            <div className="reveal-up mt-8 rounded-2xl border border-[#dbe3ee] bg-[#f8fafc] p-6 text-[#475569]">
-              <p className="text-sm leading-7">
-                Business Hours: Monday - Friday, 9:00 AM - 6:00 PM. For urgent site requirements, call us directly and our project desk will coordinate immediate support.
-              </p>
+        <ContactInquiryForm ctaLabel="Send My Project Request" />
+
+        <section className="pb-16">
+          <div className="grid w-full gap-5 px-6 md:grid-cols-3 md:px-10 lg:px-14">
+            <div className="reveal-up space-y-5 rounded-2xl border border-[#dbe3ee] bg-white p-6">
+              <div>
+                <h2 className="text-xs font-semibold tracking-[0.22em] text-[#9a7f55]">BUSINESS HOURS</h2>
+                <p className="mt-2 text-[#1F2A30]">{SITE.hours.label}</p>
+              </div>
+              <div>
+                <h2 className="text-xs font-semibold tracking-[0.22em] text-[#9a7f55]">ADDRESS</h2>
+                <address className="mt-2 not-italic text-[#1F2A30]">
+                  {SITE.name}
+                  <br />
+                  {SITE.address.street}
+                  <br />
+                  {SITE.address.city}, {SITE.address.region} {SITE.address.postalCode}
+                </address>
+              </div>
+              <div>
+                <h2 className="text-xs font-semibold tracking-[0.22em] text-[#9a7f55]">FOLLOW US</h2>
+                <ul className="mt-2 grid gap-1 text-sm">
+                  {Object.entries(SITE.social).map(([name, href]) => (
+                    <li key={name}>
+                      <a href={href} target="_blank" rel="noopener noreferrer" className="font-semibold capitalize text-[#1F2A30] hover:text-[#C2A57A]">
+                        {name === "linkedin" ? "LinkedIn" : name === "youtube" ? "YouTube" : name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+            <div className="reveal-up overflow-hidden rounded-2xl border border-[#dbe3ee] md:col-span-2">
+              <iframe
+                title="Map to Correa General Contractors office in Dallas"
+                src={SITE.mapEmbedUrl}
+                className="h-full min-h-80 w-full"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
             </div>
           </div>
         </section>
-      
-        <PageCta />
+
+        <FaqSection faqs={faqs} title="Contact FAQs" />
       </main>
       <SiteFooter />
     </div>

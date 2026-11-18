@@ -68,6 +68,16 @@ function useEmailForm(formType: string) {
 
     const formData = new FormData(form);
 
+    if (formData.get("website_hp")) {
+      // Spam bot filled the hidden field: pretend success, send nothing.
+      setIsSuccess(true);
+      setStatus("Thank you! Your submission has been received successfully.");
+      setIsSubmitting(false);
+      form.reset();
+      return;
+    }
+    formData.delete("website_hp");
+
     const data = Object.fromEntries(
       formData.entries()
     ) as Record<string, string>;
@@ -146,104 +156,155 @@ function useEmailForm(formType: string) {
 }
 
 /* =========================================
-   CONTACT / PROJECT CONSULTATION FORM
+   COMPACT FORM BUILDER
+   Short forms convert better: only ask what we need to call back.
 ========================================= */
 
-export function ContactInquiryForm({
+type Field = {
+  name: string;
+  label: string;
+  type?: "text" | "email" | "tel" | "select" | "textarea";
+  options?: string[];
+  required?: boolean;
+  autoComplete?: string;
+  wide?: boolean;
+};
+
+const nameField: Field = { name: "fullName", label: "Full Name", required: true, autoComplete: "name" };
+const phoneField: Field = { name: "phone", label: "Phone", type: "tel", required: true, autoComplete: "tel" };
+const emailField: Field = { name: "email", label: "Email", type: "email", required: true, autoComplete: "email" };
+
+function CompactForm({
+  formType,
+  title,
+  description,
+  fields,
   ctaLabel,
-}: FormProps) {
-  const {
-    handleSubmit,
-    isSubmitting,
-    status,
-    isSuccess,
-  } = useEmailForm("Project Consultation");
+}: {
+  formType: string;
+  title: string;
+  description: string;
+  fields: Field[];
+  ctaLabel: string;
+}) {
+  const { handleSubmit, isSubmitting, status, isSuccess } = useEmailForm(formType);
 
   return (
-    <section className="py-16 md:py-20">
-      <div className="w-full px-6 md:px-10 lg:px-14">
-        <SectionTitle
-          title="Request a Project Consultation"
-          description="Tell us your project type, location, and timeline. Our team will respond quickly with a tailored plan and next steps."
-        />
+    <section className="py-12 md:py-16">
+      <div className="grid w-full gap-8 px-6 md:px-10 lg:grid-cols-12 lg:gap-12 lg:px-14">
+        <div className="lg:col-span-4">
+          <SectionTitle title={title} description={description} />
+        </div>
 
         <form
           onSubmit={handleSubmit}
-          className="reveal-up mt-8 grid gap-4 rounded-3xl border border-[#e5e7eb] bg-[#fafafa] p-6 md:grid-cols-2"
+          className="reveal-up relative grid gap-4 rounded-3xl border border-[#e5e7eb] bg-[#fafafa] p-6 sm:grid-cols-2 lg:col-span-8"
         >
-          <input
-            className={inputClassName}
-            name="fullName"
-            placeholder="Full Name"
-            required
-          />
+          <div aria-hidden="true" className="absolute -left-[9999px] h-0 w-0 overflow-hidden">
+            <label>
+              Leave this field empty
+              <input type="text" name="website_hp" tabIndex={-1} autoComplete="off" />
+            </label>
+          </div>
 
-          <input
-            className={inputClassName}
-            name="phone"
-            placeholder="Phone Number"
-            required
-          />
+          {fields.map((field) => {
+            const id = `${formType.replace(/\W+/g, "-").toLowerCase()}-${field.name}`;
+            const span = field.wide || field.type === "textarea" ? "sm:col-span-2" : "";
+            const label = (
+              <label htmlFor={id} className="mb-1 block text-xs font-semibold tracking-wide text-[#475569]">
+                {field.label}
+                {field.required ? <span className="text-[#b45309]"> *</span> : <span className="font-normal"> (optional)</span>}
+              </label>
+            );
 
-          <input
-            className={inputClassName}
-            type="email"
-            name="email"
-            placeholder="Email Address"
-            required
-          />
+            if (field.type === "select") {
+              return (
+                <div key={field.name} className={span}>
+                  {label}
+                  <select id={id} name={field.name} required={field.required} defaultValue="" className={inputClassName}>
+                    <option value="" disabled>
+                      Select…
+                    </option>
+                    {field.options?.map((option) => (
+                      <option key={option} value={option}>
+                        {option}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              );
+            }
 
-          <input
-            className={inputClassName}
-            name="city"
-            placeholder="Project City"
-            required
-          />
+            if (field.type === "textarea") {
+              return (
+                <div key={field.name} className={span}>
+                  {label}
+                  <textarea id={id} name={field.name} rows={3} required={field.required} className={inputClassName} />
+                </div>
+              );
+            }
 
-          <input
-            className={inputClassName}
-            name="projectType"
-            placeholder="Project Type (Residential/Commercial)"
-          />
+            return (
+              <div key={field.name} className={span}>
+                {label}
+                <input
+                  id={id}
+                  name={field.name}
+                  type={field.type ?? "text"}
+                  required={field.required}
+                  autoComplete={field.autoComplete}
+                  inputMode={field.type === "email" ? "email" : field.type === "tel" ? "tel" : undefined}
+                  className={inputClassName}
+                />
+              </div>
+            );
+          })}
 
-          <input
-            className={inputClassName}
-            name="budget"
-            placeholder="Estimated Budget"
-          />
-
-          <textarea
-            className={`${inputClassName} md:col-span-2`}
-            rows={5}
-            name="message"
-            placeholder="Project details, timeline expectations, and preferred callback time"
-            required
-          />
-
-          <div className="md:col-span-2">
+          <div className="flex flex-wrap items-center gap-4 sm:col-span-2">
             <button
               type="submit"
               disabled={isSubmitting}
-              className="inline-flex items-center justify-center rounded-full bg-[#C2A57A] px-7 py-3 text-sm font-semibold text-white transition hover:bg-[#ad9169] disabled:cursor-not-allowed disabled:opacity-60"
+              className="inline-flex items-center justify-center rounded-full bg-[#C2A57A] px-7 py-3 text-sm font-semibold text-[#1F2A30] transition hover:bg-[#d5ba92] disabled:cursor-not-allowed disabled:opacity-60"
             >
-              {isSubmitting ? "Submitting..." : ctaLabel}
+              {isSubmitting ? "Sending…" : ctaLabel}
             </button>
-
-            {status && (
-              <p
-                className={`mt-4 text-sm ${
-                  isSuccess
-                    ? "text-green-600"
-                    : "text-red-600"
-                }`}
-              >
+            {status ? (
+              <p role="status" aria-live="polite" className={`text-sm ${isSuccess ? "text-green-700" : "text-red-600"}`}>
                 {status}
               </p>
-            )}
+            ) : null}
           </div>
         </form>
       </div>
     </section>
+  );
+}
+
+/* =========================================
+   CONTACT / PROJECT CONSULTATION FORM
+========================================= */
+
+export function ContactInquiryForm({ ctaLabel }: FormProps) {
+  return (
+    <CompactForm
+      formType="Project Consultation"
+      title="Request a Free Estimate"
+      description="Share a few details and our team will call you back to discuss your project."
+      ctaLabel={ctaLabel}
+      fields={[
+        nameField,
+        phoneField,
+        emailField,
+        {
+          name: "projectType",
+          label: "Project Type",
+          type: "select",
+          required: true,
+          options: ["Commercial / Tenant Improvement", "Residential / Custom Home", "Renovation & Remodeling", "Design-Build", "Other"],
+        },
+        { name: "message", label: "Project details", type: "textarea" },
+      ]}
+    />
   );
 }
 
@@ -251,135 +312,22 @@ export function ContactInquiryForm({
    SUBCONTRACTOR REGISTRATION FORM
 ========================================= */
 
-export function SubcontractorRegistrationForm({
-  ctaLabel,
-}: FormProps) {
-  const {
-    handleSubmit,
-    isSubmitting,
-    status,
-    isSuccess,
-  } = useEmailForm("Subcontractor Registration");
-
+export function SubcontractorRegistrationForm({ ctaLabel }: FormProps) {
   return (
-    <section className="py-16 md:py-20">
-      <div className="w-full px-6 md:px-10 lg:px-14">
-        <SectionTitle
-          title="Subcontractor Registration Form"
-          description="Register your trade specialization and company credentials to be considered for upcoming Correa General Contractors projects."
-        />
-
-        <form
-          onSubmit={handleSubmit}
-          className="reveal-up mt-8 grid gap-4 rounded-3xl border border-[#e5e7eb] bg-[#fafafa] p-6 md:grid-cols-2"
-        >
-          <input
-            className={inputClassName}
-            name="companyName"
-            placeholder="Company Name"
-            required
-          />
-
-          <input
-            className={inputClassName}
-            name="contactPerson"
-            placeholder="Primary Contact Name"
-            required
-          />
-
-          <input
-            className={inputClassName}
-            type="email"
-            name="email"
-            placeholder="Business Email"
-            required
-          />
-
-          <input
-            className={inputClassName}
-            name="phone"
-            placeholder="Phone Number"
-            required
-          />
-
-          <input
-            className={inputClassName}
-            name="trade"
-            placeholder="Primary Trade/Specialty"
-            required
-          />
-
-          <input
-            className={inputClassName}
-            name="coverageArea"
-            placeholder="Service Area (Cities)"
-            required
-          />
-
-          <input
-            className={inputClassName}
-            name="licenseNumber"
-            placeholder="License Number"
-          />
-
-          <input
-            className={inputClassName}
-            name="insurance"
-            placeholder="Insurance Carrier / Policy Info"
-          />
-
-          <input
-            className={inputClassName}
-            name="crewSize"
-            placeholder="Crew Size / Team Capacity"
-          />
-
-          <input
-            className={inputClassName}
-            name="yearsInBusiness"
-            placeholder="Years in Business"
-          />
-
-          <textarea
-            className={`${inputClassName} md:col-span-2`}
-            rows={5}
-            name="experience"
-            placeholder="Relevant project experience and crew capacity"
-            required
-          />
-
-          <textarea
-            className={`${inputClassName} md:col-span-2`}
-            rows={4}
-            name="address"
-            placeholder="Office Address"
-            required
-          />
-
-          <div className="md:col-span-2">
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              className="inline-flex items-center justify-center rounded-full bg-[#1F2A30] px-7 py-3 text-sm font-semibold text-white transition hover:bg-[#11181d] disabled:cursor-not-allowed disabled:opacity-60"
-            >
-              {isSubmitting ? "Submitting..." : ctaLabel}
-            </button>
-
-            {status && (
-              <p
-                className={`mt-4 text-sm ${
-                  isSuccess
-                    ? "text-green-600"
-                    : "text-red-600"
-                }`}
-              >
-                {status}
-              </p>
-            )}
-          </div>
-        </form>
-      </div>
-    </section>
+    <CompactForm
+      formType="Subcontractor Registration"
+      title="Register as a Subcontractor"
+      description="Send us your company and trade. We'll follow up when we have a matching bid package."
+      ctaLabel={ctaLabel}
+      fields={[
+        { name: "companyName", label: "Company Name", required: true, autoComplete: "organization" },
+        { ...nameField, label: "Contact Name" },
+        phoneField,
+        emailField,
+        { name: "trade", label: "Trade / Specialty", required: true, wide: true },
+        { name: "message", label: "Service area & notes", type: "textarea" },
+      ]}
+    />
   );
 }
 
@@ -387,114 +335,27 @@ export function SubcontractorRegistrationForm({
    CAREER APPLICATION FORM
 ========================================= */
 
-export function CareerApplicationForm({
-  ctaLabel,
-}: FormProps) {
-  const {
-    handleSubmit,
-    isSubmitting,
-    status,
-    isSuccess,
-  } = useEmailForm("Career Application");
-
+export function CareerApplicationForm({ ctaLabel }: FormProps) {
   return (
-    <section className="py-16 md:py-20">
-      <div className="w-full px-6 md:px-10 lg:px-14">
-        <SectionTitle
-          title="Career Application Form"
-          description="Apply for current and upcoming roles in project management, field operations, safety, and support teams."
-        />
-
-        <form
-          onSubmit={handleSubmit}
-          className="reveal-up mt-8 grid gap-4 rounded-3xl border border-[#e5e7eb] bg-[#fafafa] p-6 md:grid-cols-2"
-        >
-          <input
-            className={inputClassName}
-            name="fullName"
-            placeholder="Full Name"
-            required
-          />
-
-          <input
-            className={inputClassName}
-            name="phone"
-            placeholder="Phone Number"
-            required
-          />
-
-          <input
-            className={inputClassName}
-            type="email"
-            name="email"
-            placeholder="Email Address"
-            required
-          />
-
-          <input
-            className={inputClassName}
-            name="location"
-            placeholder="Current City"
-            required
-          />
-
-          <input
-            className={inputClassName}
-            name="position"
-            placeholder="Role You're Applying For"
-            required
-          />
-
-          <input
-            className={inputClassName}
-            name="experienceYears"
-            placeholder="Years of Experience"
-          />
-
-          <input
-            className={inputClassName}
-            name="availability"
-            placeholder="Availability (Immediate/Notice Period)"
-          />
-
-          <input
-            className={inputClassName}
-            name="linkedin"
-            placeholder="LinkedIn Profile (Optional)"
-          />
-
-          <textarea
-            className={`${inputClassName} md:col-span-2`}
-            rows={5}
-            name="summary"
-            placeholder="Briefly describe your relevant construction experience"
-            required
-          />
-
-          <div className="md:col-span-2">
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              className="inline-flex items-center justify-center rounded-full bg-[#C2A57A] px-7 py-3 text-sm font-semibold text-white transition hover:bg-[#ad9169] disabled:cursor-not-allowed disabled:opacity-60"
-            >
-              {isSubmitting ? "Submitting..." : ctaLabel}
-            </button>
-
-            {status && (
-              <p
-                className={`mt-4 text-sm ${
-                  isSuccess
-                    ? "text-green-600"
-                    : "text-red-600"
-                }`}
-              >
-                {status}
-              </p>
-            )}
-          </div>
-        </form>
-      </div>
-    </section>
+    <CompactForm
+      formType="Career Application"
+      title="Apply to Join Our Team"
+      description="Tell us who you are and which role interests you. We'll reach out if there's a fit."
+      ctaLabel={ctaLabel}
+      fields={[
+        nameField,
+        phoneField,
+        emailField,
+        {
+          name: "role",
+          label: "Role",
+          type: "select",
+          required: true,
+          options: ["Project Engineer", "Site Supervisor", "Estimator", "Construction Coordinator", "Other"],
+        },
+        { name: "experience", label: "Experience (brief)", type: "textarea" },
+      ]}
+    />
   );
 }
 
@@ -502,122 +363,28 @@ export function CareerApplicationForm({
    BUILD WITH US / PARTNERSHIP FORM
 ========================================= */
 
-export function BuildWithUsForm({
-  ctaLabel,
-}: FormProps) {
-  const {
-    handleSubmit,
-    isSubmitting,
-    status,
-    isSuccess,
-  } = useEmailForm("Build With Us Partnership");
-
+export function BuildWithUsForm({ ctaLabel }: FormProps) {
   return (
-    <section className="py-16 md:py-20">
-      <div className="w-full px-6 md:px-10 lg:px-14">
-        <SectionTitle
-          title="Build With Us - Partnership Form"
-          description="Share your company profile or project requirement. Our team will connect with you for the right collaboration path."
-        />
-
-        <form
-          onSubmit={handleSubmit}
-          className="reveal-up mt-8 grid gap-4 rounded-3xl border border-[#d9e2ee] bg-gradient-to-br from-[#f8fafc] to-[#eef3f8] p-6 md:grid-cols-2"
-        >
-          <input
-            className={inputClassName}
-            name="fullName"
-            placeholder="Full Name"
-            required
-          />
-
-          <input
-            className={inputClassName}
-            name="companyName"
-            placeholder="Company / Organization"
-            required
-          />
-
-          <input
-            className={inputClassName}
-            type="email"
-            name="email"
-            placeholder="Email Address"
-            required
-          />
-
-          <input
-            className={inputClassName}
-            name="phone"
-            placeholder="Phone Number"
-            required
-          />
-
-          <input
-            className={inputClassName}
-            name="city"
-            placeholder="City / Service Area"
-            required
-          />
-
-          <input
-            className={inputClassName}
-            name="partnershipType"
-            placeholder="Partnership Type (Client / Vendor / Investor / Trade)"
-            required
-          />
-
-          <input
-            className={inputClassName}
-            name="budgetRange"
-            placeholder="Budget Range (Optional)"
-          />
-
-          <input
-            className={inputClassName}
-            name="timeline"
-            placeholder="Expected Start Timeline"
-          />
-
-          <textarea
-            className={`${inputClassName} md:col-span-2`}
-            rows={4}
-            name="address"
-            placeholder="Address / Office Location"
-            required
-          />
-
-          <textarea
-            className={`${inputClassName} md:col-span-2`}
-            rows={5}
-            name="message"
-            placeholder="Tell us about your project, capabilities, or collaboration goals"
-            required
-          />
-
-          <div className="md:col-span-2">
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              className="inline-flex items-center justify-center rounded-full bg-[#1F2A30] px-7 py-3 text-sm font-semibold text-white transition hover:bg-[#11181d] disabled:cursor-not-allowed disabled:opacity-60"
-            >
-              {isSubmitting ? "Submitting..." : ctaLabel}
-            </button>
-
-            {status && (
-              <p
-                className={`mt-4 text-sm ${
-                  isSuccess
-                    ? "text-green-600"
-                    : "text-red-600"
-                }`}
-              >
-                {status}
-              </p>
-            )}
-          </div>
-        </form>
-      </div>
-    </section>
+    <CompactForm
+      formType="Partnership Request"
+      title="Start a Partnership"
+      description="A few quick details are all we need to start the conversation."
+      ctaLabel={ctaLabel}
+      fields={[
+        nameField,
+        { name: "companyName", label: "Company", autoComplete: "organization" },
+        phoneField,
+        emailField,
+        {
+          name: "partnershipType",
+          label: "I am a…",
+          type: "select",
+          required: true,
+          wide: true,
+          options: ["Project Owner / Client", "Vendor / Supplier", "Design or Engineering Professional", "Investor / Developer", "Other"],
+        },
+        { name: "message", label: "How would you like to work together?", type: "textarea" },
+      ]}
+    />
   );
 }
