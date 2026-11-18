@@ -1,44 +1,60 @@
 import type { MetadataRoute } from "next";
 import { blogPosts } from "./components/blog-data";
+import { locationPages } from "./components/location-data";
 import { projectsData } from "./components/project-data";
+import { serviceDetails } from "./components/service-data";
+import { SITE, absoluteUrl } from "./lib/site";
 
-const BASE_URL = "https://correagcs.com";
-
-const routes = [
-  "",
-  "/about-us",
-  "/blog",
-  "/contact",
-  "/contact-us",
-  "/build-with-us",
-  "/join-our-team",
-  "/projects",
-  "/services",
-  "/services/general-contracting",
-  "/services/design-build",
-  "/services/renovation-remodeling",
-  "/services/project-consultation",
-  "/services/commercial",
-  "/services/residential",
-  "/general-contractor-in-dallas",
-  "/general-contractor-in-frisco",
-  "/general-contractor-in-arlington",
-  "/construction-company-in-denton",
-  "/subcontractors",
-  "/what-we-do",
-  "/who-we-are",
-];
+// Bump this when the content of static pages meaningfully changes.
+const SITE_UPDATED = "2026-11-18";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date();
-  const blogRoutes = blogPosts.map((post) => `/blog/${post.slug}`);
-  const projectRoutes = projectsData.map((project) => `/projects/${project.slug}`);
-  const allRoutes = [...routes, ...blogRoutes, ...projectRoutes];
+  const staticRoutes: { path: string; priority: number; images?: string[] }[] = [
+    { path: "/", priority: 1, images: [SITE.defaultOgImage] },
+    { path: "/services", priority: 0.9 },
+    { path: "/about-us", priority: 0.7 },
+    { path: "/contact-us", priority: 0.8 },
+    { path: "/projects", priority: 0.8 },
+    { path: "/blog", priority: 0.7 },
+    { path: "/author/deepak-gupta", priority: 0.4 },
+    { path: "/build-with-us", priority: 0.4 },
+    { path: "/join-our-team", priority: 0.4 },
+    { path: "/subcontractors", priority: 0.4 },
+  ];
 
-  return allRoutes.map((route) => ({
-    url: `${BASE_URL}${route}`,
-    lastModified: now,
-    changeFrequency: route === "" ? "weekly" : "monthly",
-    priority: route === "" ? 1 : 0.7,
-  }));
+  return [
+    ...staticRoutes.map((route) => ({
+      url: absoluteUrl(route.path),
+      lastModified: SITE_UPDATED,
+      changeFrequency: "monthly" as const,
+      priority: route.priority,
+      ...(route.images ? { images: route.images.map((image) => absoluteUrl(image)) } : {}),
+    })),
+    ...serviceDetails.map((service) => ({
+      url: absoluteUrl(`/services/${service.slug}`),
+      lastModified: SITE_UPDATED,
+      changeFrequency: "monthly" as const,
+      priority: 0.9,
+      images: [absoluteUrl(service.heroImage)],
+    })),
+    ...locationPages.map((location) => ({
+      url: absoluteUrl(location.path),
+      lastModified: SITE_UPDATED,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    })),
+    ...projectsData.map((project) => ({
+      url: absoluteUrl(`/projects/${project.slug}`),
+      lastModified: SITE_UPDATED,
+      changeFrequency: "yearly" as const,
+      priority: 0.6,
+      images: project.gallery.map((image) => absoluteUrl(image)),
+    })),
+    ...blogPosts.map((post) => ({
+      url: absoluteUrl(`/blog/${post.slug}`),
+      lastModified: post.updatedAt,
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
+  ];
 }

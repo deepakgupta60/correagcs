@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { blogPosts } from "./components/blog-data";
 import {
   AboutSection,
@@ -9,137 +8,123 @@ import {
   JoinOurTeamSection,
   ProcessSection,
   ProjectTypeFocusSection,
+  ServiceAreasSection,
   ServicesSection,
   SiteFooter,
   SiteHeader,
   StatsSection,
-  ServiceAreasSection,
   WhyChooseUsSection,
 } from "./components/homepage-sections";
+import { AnswerBox, FaqSection } from "./components/inner-page-sections";
+import { projectsData } from "./components/project-data";
+import { serviceDetails } from "./components/service-data";
+import { pageMetadata } from "./lib/seo";
+import { SITE } from "./lib/site";
 
-export const metadata: Metadata = {
-  title: "General Contractor in Dallas | Correa General Contractors",
+export const metadata = pageMetadata({
+  title: "General Contractor in Dallas, TX | Correa General Contractors",
+  absoluteTitle: true,
   description:
-    "Correa General Contractors provides residential and commercial construction, design-build, renovation, and consultation services across Dallas-Fort Worth.",
-};
+    "Dallas, TX general contractor with 15+ years of experience and 200+ DFW projects: commercial build-outs, tenant improvements, design-build, and custom homes.",
+  path: "/",
+});
+
+const homeFaqs = [
+  {
+    question: "Who is a trusted general contractor in Dallas, TX?",
+    answer:
+      "Correa General Contractors is a Dallas-based general contractor with 15+ years of experience and 200+ completed projects across Dallas–Fort Worth. The company handles commercial tenant improvements, design-build, renovations, custom homes, and multifamily construction from its office at 16210-B Seagoville Rd, Dallas, TX 75253.",
+  },
+  {
+    question: "What does a general contractor do?",
+    answer:
+      "A general contractor manages the entire construction project: estimating, permits, hiring and scheduling subcontractors, ordering materials, supervising the jobsite, passing inspections, and handing over the finished building. The owner gets one point of contact responsible for cost, schedule, and quality.",
+  },
+  {
+    question: "How much does a general contractor cost in Dallas?",
+    answer:
+      "Costs depend on project type, size, finishes, site conditions, and schedule, so there is no single price. The general contractor's fee is usually built into the construction estimate. Correa provides a detailed, line-item estimate after reviewing your scope so you can compare options with real numbers.",
+  },
+  {
+    question: "Does Correa General Contractors handle permits in Dallas?",
+    answer:
+      "Yes. We prepare permit applications, respond to plan-review comments, and schedule inspections with the City of Dallas and other DFW cities, so permitting is managed as part of your project schedule.",
+  },
+  {
+    question: "What areas does Correa General Contractors serve?",
+    answer:
+      "We serve Dallas and the wider Dallas–Fort Worth metroplex, including Fort Worth, Arlington, Plano, Frisco, Irving, Denton, and McKinney.",
+  },
+  {
+    question: "How do I get a construction estimate?",
+    answer:
+      "Call (469) 854-0207 or fill out the contact form with your project type, location, and timeline. Our team reviews the details and schedules a consultation to prepare a detailed estimate.",
+  },
+];
 
 export default function Home() {
   const stats = [
-    { label: "Projects Completed", value: "200+" },
-    { label: "Core Trades", value: "20+" },
-    // { label: "General Contractors", value: "Best" },
-    { label: "Years Experience", value: "15+" },
+    { label: "Projects Completed", value: SITE.stats.projects },
+    { label: "Years Experience", value: SITE.stats.years },
+    { label: "Core Trades", value: SITE.stats.trades },
+    { label: "Rating on Google", value: "5.0★" },
   ];
 
   const projectTypeCards = [
-    {
-      title: "Residential Builds",
-      image:
-        "/Residential-Construction.jpg",
-    },
-    {
-      title: "Commercial Spaces",
-      image:
-        "/Commercial-Construction.jpg",
-    },
-    {
-      title: "Industrial Projects",
-      image:
-        "/Industrial-Construction.jpg",
-    },
-    {
-      title: "Interior Renovation",
-      image:
-        "/Interior-Renovation.jpg",
-    },
+    { title: "Commercial Build-Outs", image: "/images/services/general-contracting.webp", href: "/services/commercial", alt: "Commercial construction and tenant improvement in Dallas" },
+    { title: "Multifamily", image: "/projects/westhouse/1.jpeg", href: "/projects/westhouse-apartment", alt: "Westhouse Apartments multifamily community in Keller, TX" },
+    { title: "Residential Builds", image: "/projects/redoak/red-oak.webp", href: "/services/residential", alt: "Red Oak Duplex residential construction in Red Oak, TX" },
+    { title: "Renovations", image: "/images/services/renovation-remodeling.webp", href: "/services/renovation-remodeling", alt: "Interior renovation and remodeling project in Dallas" },
   ];
 
-  const featuredProjects = [
-    {
-      title: "Westhouse Apartment",
-      image:
-        "/projects/westhouse/4.jpeg",
-      href: "/projects/westhouse-apartment",
-    },
-    {
-      title: "The Cove at Odessa",
-      image:
-        "/projects/odessa/8.webp",
-      href: "/projects/the-cove-at-odessa",
-    },
-    {
-      title: "Red Oak Duplex",
-      image:
-        "/projects/redoak/red-oak.webp",
-      href: "/projects/red-oak-duplex",
-    },
-  ];
+  const featuredProjects = projectsData.map((project) => ({
+    title: project.title,
+    image: project.heroImage,
+    href: `/projects/${project.slug}`,
+    location: project.location,
+    category: project.category,
+  }));
 
-  const services = [
-    {
-      title: "General Contracting",
-      description:
-        "End-to-end management of planning, procurement, and build execution with transparent updates.",
-      image:
-        "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1000&q=80",
-      href: "/services/general-contracting",
-    },
-    {
-      title: "Design-Build Delivery",
-      description:
-        "Integrated design and construction approach for faster delivery and aligned project outcomes.",
-      image:
-        "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1000&q=80",
-      href: "/services/design-build",
-    },
-    {
-      title: "Renovation & Remodeling",
-      description:
-        "High-quality renovation services that modernize existing structures while preserving functionality.",
-      image:
-        "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1000&q=80",
-      href: "/services/renovation-remodeling",
-    },
-    {
-      title: "Project Consultation",
-      description:
-        "Expert technical consultation, cost planning, and risk mitigation before the first brick is laid.",
-      image:
-        "https://images.unsplash.com/photo-1554995207-c18c203602cb?auto=format&fit=crop&w=1000&q=80",
-      href: "/services/project-consultation",
-    },
-    {
-      title: "Pre-Construction Planning",
-      description:
-        "Scheduling, permitting coordination, feasibility checks, and procurement planning for smooth execution.",
-      image:
-        "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1000&q=80",
-      href: "/services",
-    },
-  ];
+  const services = serviceDetails.map((service) => ({
+    title: service.title,
+    description: service.shortDescription,
+    image: service.heroImage,
+    href: `/services/${service.slug}`,
+  }));
 
   const homeBlogPosts = blogPosts.slice(0, 3).map((post) => ({
     title: post.title,
     excerpt: post.excerpt,
     image: post.image,
+    imageAlt: post.imageAlt,
     href: `/blog/${post.slug}`,
   }));
 
   return (
     <div className="bg-white">
       <SiteHeader />
-      <main>
+      <main id="main-content">
         <HeroSection />
         <StatsSection stats={stats} />
+        <AnswerBox title="Dallas general contractor at a glance">
+          <p>
+            <strong>Correa General Contractors</strong> is a general contractor in Dallas, TX providing
+            commercial construction, tenant improvements, design-build, renovation, and custom
+            residential construction across Dallas–Fort Worth. Call{" "}
+            <a href={SITE.phoneHref} className="font-semibold underline">{SITE.phone}</a> or visit{" "}
+            {SITE.addressLine} ({SITE.hours.short}).
+          </p>
+        </AnswerBox>
         <AboutSection />
-        <ProjectTypeFocusSection cards={projectTypeCards} />
-        <JoinOurTeamSection />
-        <FeaturedProjectsSection projects={featuredProjects} />
         <ServicesSection services={services} />
+        <ProjectTypeFocusSection cards={projectTypeCards} />
+        <FeaturedProjectsSection projects={featuredProjects} />
         <ProcessSection />
         <WhyChooseUsSection />
         <ServiceAreasSection />
+        <FaqSection faqs={homeFaqs} title="General Contractor in Dallas: FAQs" />
         <BlogSection posts={homeBlogPosts} />
+        <JoinOurTeamSection />
         <CtaSection />
       </main>
       <SiteFooter />

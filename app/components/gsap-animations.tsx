@@ -7,160 +7,85 @@ import { usePathname } from "next/navigation";
 
 gsap.registerPlugin(ScrollTrigger);
 
+const BOT_UA = /bot|crawl|spider|slurp|lighthouse|pagespeed|headless|preview/i;
+
+/**
+ * Scroll animations that can never leave a section blank:
+ * - Hero text is never hidden (it is the LCP element, so it must paint immediately).
+ * - Elements already on screen at load are never hidden.
+ * - Crawlers, reduced-motion users, and headless browsers get no entrance animations.
+ * - A failsafe reveals anything still hidden after a few seconds.
+ */
 export function GsapAnimations() {
   const pathname = usePathname();
 
   useEffect(() => {
-    const cleanupHoverListeners: Array<() => void> = [];
-    const cleanupHeaderListeners: Array<() => void> = [];
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const isBot = BOT_UA.test(navigator.userAgent) || navigator.webdriver;
+    const cleanups: Array<() => void> = [];
 
     const ctx = gsap.context(() => {
-      const hero = document.querySelector<HTMLElement>("#home");
-      if (hero) {
-        const heroTimeline = gsap.timeline({ defaults: { ease: "power3.out" } });
-        heroTimeline.fromTo(
-          hero.querySelectorAll("h1, p, .inline-flex, .rounded-full"),
-          { opacity: 0, y: 36 },
-          { opacity: 1, y: 0, duration: 0.9, stagger: 0.12 },
-        );
-
-        const heroVideo = hero.querySelector("video");
-        if (heroVideo) {
-          gsap.fromTo(heroVideo, { scale: 1.08 }, { scale: 1, duration: 1.4, ease: "power2.out" });
-        }
+      const heroMedia = document.querySelector<HTMLElement>("#home img, #home video");
+      if (heroMedia && !reduceMotion) {
+        gsap.fromTo(heroMedia, { scale: 1.06 }, { scale: 1, duration: 1.4, ease: "power2.out" });
       }
 
-      gsap.utils.toArray<HTMLElement>(".reveal-up").forEach((element) => {
-        gsap.fromTo(
-          element,
-          { opacity: 0, y: 42 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.9,
-            ease: "power3.out",
-            scrollTrigger: {
-              trigger: element,
-              start: "top 88%",
-              once: true,
+      if (!reduceMotion && !isBot) {
+        const fold = window.innerHeight * 0.92;
+        const pending = gsap.utils
+          .toArray<HTMLElement>(".reveal-up")
+          .filter((element) => element.getBoundingClientRect().top > fold);
+
+        pending.forEach((element) => {
+          gsap.fromTo(
+            element,
+            { opacity: 0, y: 32 },
+            {
+              opacity: 1,
+              y: 0,
+              duration: 0.6,
+              ease: "power3.out",
+              scrollTrigger: { trigger: element, start: "top 94%", once: true },
             },
-          },
-        );
-      });
-
-      gsap.utils.toArray<HTMLElement>(".gsap-zoom-card").forEach((card) => {
-        const media = card.querySelector<HTMLElement>("[data-zoom-target]");
-        if (!media) return;
-
-        const zoomIn = () => {
-          gsap.to(media, {
-            scale: 1.08,
-            duration: 0.45,
-            ease: "power2.out",
-            overwrite: "auto",
-          });
-        };
-
-        const zoomOut = () => {
-          gsap.to(media, {
-            scale: 1,
-            duration: 0.45,
-            ease: "power2.out",
-            overwrite: "auto",
-          });
-        };
-
-        card.addEventListener("mouseenter", zoomIn);
-        card.addEventListener("mouseleave", zoomOut);
-        cleanupHoverListeners.push(() => {
-          card.removeEventListener("mouseenter", zoomIn);
-          card.removeEventListener("mouseleave", zoomOut);
+          );
         });
-      });
 
-      const header = document.querySelector<HTMLElement>(".site-header");
-      const headerInner = document.querySelector<HTMLElement>(".site-header-inner");
-
-      if (header && headerInner) {
-        const forceScrolled = header.dataset.forceScrolled === "true";
-        header.classList.remove("site-header--hovered");
-        const headerSurface = {
-          backgroundColor: "rgba(255, 255, 255, 0.98)",
-          borderBottomColor: "rgba(214, 214, 214, 1)",
-          boxShadow: "0 8px 24px rgba(0,0,0,0.08)",
-        };
-
-        if (forceScrolled) {
-          header.classList.add("site-header--scrolled");
-          gsap.set(header, headerSurface);
-          gsap.set(headerInner, { paddingTop: 10, paddingBottom: 10 });
-          return;
-        }
-
-        const setScrolledHeader = () => {
-          header.classList.add("site-header--scrolled");
-          gsap.to(header, { ...headerSurface, duration: 0.25, overwrite: "auto" });
-          gsap.to(headerInner, {
-            paddingTop: 10,
-            paddingBottom: 10,
-            duration: 0.25,
-            overwrite: "auto",
-          });
-        };
-
-        const setTransparentHeader = () => {
-          header.classList.remove("site-header--scrolled");
-          header.classList.remove("site-header--hovered");
-          gsap.to(header, {
-            backgroundColor: "rgba(0,0,0,0)",
-            borderBottomColor: "rgba(255,255,255,0)",
-            boxShadow: "0 0 0 rgba(0,0,0,0)",
-            duration: 0.25,
-            overwrite: "auto",
-          });
-          gsap.to(headerInner, {
-            paddingTop: 16,
-            paddingBottom: 16,
-            duration: 0.25,
-            overwrite: "auto",
-          });
-        };
-
-        const setHoveredHeader = () => {
-          header.classList.add("site-header--hovered");
-          gsap.to(header, { ...headerSurface, duration: 0.2, overwrite: "auto" });
-        };
-
-        const clearHoveredHeader = () => {
-          header.classList.remove("site-header--hovered");
-          if (window.scrollY <= 12) {
-            setTransparentHeader();
-          }
-        };
-
-        const onScroll = () => {
-          if (window.scrollY > 12) {
-            setScrolledHeader();
-          } else {
-            if (!header.classList.contains("site-header--hovered")) {
-              setTransparentHeader();
+        // Failsafe: never leave content invisible (stalled tab, fast scroll, odd browsers).
+        const failsafe = window.setTimeout(() => {
+          pending.forEach((element) => {
+            if (Number(getComputedStyle(element).opacity) < 1 && element.getBoundingClientRect().top < window.innerHeight) {
+              gsap.set(element, { opacity: 1, y: 0 });
             }
-          }
+          });
+        }, 2500);
+        const onScrollEnd = () => {
+          pending.forEach((element) => {
+            if (element.getBoundingClientRect().bottom < 0) gsap.set(element, { opacity: 1, y: 0 });
+          });
         };
+        window.addEventListener("scrollend", onScrollEnd);
+        cleanups.push(() => window.clearTimeout(failsafe));
+        cleanups.push(() => window.removeEventListener("scrollend", onScrollEnd));
+      }
 
-        onScroll();
-        window.addEventListener("scroll", onScroll, { passive: true });
-        header.addEventListener("mouseenter", setHoveredHeader);
-        header.addEventListener("mouseleave", clearHoveredHeader);
-        cleanupHeaderListeners.push(() => window.removeEventListener("scroll", onScroll));
-        cleanupHeaderListeners.push(() => header.removeEventListener("mouseenter", setHoveredHeader));
-        cleanupHeaderListeners.push(() => header.removeEventListener("mouseleave", clearHoveredHeader));
+      if (!reduceMotion) {
+        gsap.utils.toArray<HTMLElement>(".gsap-zoom-card").forEach((card) => {
+          const media = card.querySelector<HTMLElement>("[data-zoom-target]");
+          if (!media) return;
+          const zoomIn = () => gsap.to(media, { scale: 1.08, duration: 0.45, ease: "power2.out", overwrite: "auto" });
+          const zoomOut = () => gsap.to(media, { scale: 1, duration: 0.45, ease: "power2.out", overwrite: "auto" });
+          card.addEventListener("mouseenter", zoomIn);
+          card.addEventListener("mouseleave", zoomOut);
+          cleanups.push(() => {
+            card.removeEventListener("mouseenter", zoomIn);
+            card.removeEventListener("mouseleave", zoomOut);
+          });
+        });
       }
     });
 
     return () => {
-      cleanupHeaderListeners.forEach((cleanup) => cleanup());
-      cleanupHoverListeners.forEach((cleanup) => cleanup());
+      cleanups.forEach((cleanup) => cleanup());
       ctx.revert();
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
